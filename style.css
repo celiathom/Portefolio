@@ -875,3 +875,43 @@ input:checked + .slider:before {
   width: 390px; /* ou plus, selon la taille désirée */
   height: 390px;
 }
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9rem;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover animation */
+.nav-links li a:hover {
+  transform: scale(1.1);
+}
+
+/* Quand le lien est actif = ombre noire en bas */
+.nav-links li.active a {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Mode clair */
+.light-mode .nav-links li a {
+  color: black;
+}
+
+.light-mode .nav-links li.active a {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* lien actif en mode clair */
+.light-mode .nav-links li.active a {
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* lien actif en mode sombre */
+.nav-links li.active a {
+  box-shadow: 0 3px 0 rgba(255, 255, 255, 0.8);
+}
+

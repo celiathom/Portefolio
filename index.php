@@ -218,6 +218,17 @@
   });
 </script>
 
+<script>
+  const navItems = document.querySelectorAll(".nav-links li");
+
+  navItems.forEach(item => {
+    item.addEventListener("click", () => {
+      navItems.forEach(li => li.classList.remove("active"));
+      item.classList.add("active");
+    });
+  });
+</script>
+
 <style>
 .project-media {
   width: 100%;
