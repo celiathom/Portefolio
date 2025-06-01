@@ -1,0 +1,23 @@
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* espace entre image et texte */
+  padding: 1rem;
+}
+
+.project-media {
+  flex: 0 0 180px; /* largeur fixe ou max pour l'image */
+  max-width: 200px;
+}
+
+.project-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+}
+
+.project-info {
+  flex: 1 1 0;
+}

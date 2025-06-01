@@ -1,0 +1,10 @@
+<div class="project-card neon-red">
+  <div class="project-media">
+    <img src="assets/Capture.png" alt="Capture Puissance 4">
+  </div>
+  <div class="project-info">
+    <h3>Puissance 4</h3>
+    <p>Votre texte ici...</p>
+    <!-- autres éléments -->
+  </div>
+</div>

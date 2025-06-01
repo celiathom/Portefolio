@@ -4,11 +4,13 @@ function afficherNavbar($pageActive = 'accueil') {
         'accueil' => 'Accueil',
         'apropos' => 'À propos',
         'competences' => 'Compétences',
-        'portfolio' => 'Portfolio',
-        'contact' => 'Contact'
+        'portfolio' => 'Portfolio'
     ];
 
     echo '<div class="navbar">';
+
+    // Groupe nav-links + switch
+    echo '<div class="nav-group">';
     echo '<ul class="nav-links">';
     foreach ($pages as $id => $label) {
         $active = ($pageActive === $id) ? 'active' : '';
@@ -17,11 +19,12 @@ function afficherNavbar($pageActive = 'accueil') {
     echo '</ul>';
 
     echo '<label class="switch">';
-    echo '  <input type="checkbox" id="theme-toggle">'; 
+    echo '  <input type="checkbox" id="theme-toggle">';
     echo '  <span class="slider"></span>';
     echo '</label>';
+    echo '</div>'; // .nav-group
 
-    echo 
-    '</div>';
+    echo '</div>'; // .navbar
 }
+
 ?>

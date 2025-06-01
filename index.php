@@ -26,7 +26,7 @@
     </div>
 
     <div class="bouton-cv">
-        <a href="assets/Copie de CV fleurs illustré noir et blanc-1.pdf" download="cv">
+        <a href="assets/cv developpeuse et designer (bis).pdf" download="cv">
             TÉLÉCHARGER CV
         </a>
     </div>
@@ -218,5 +218,18 @@
   });
 </script>
 
-
-
+<style>
+.project-media {
+  width: 100%;
+  height: 200px; /* ou la hauteur que tu veux */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-media video {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+}
+</style>
