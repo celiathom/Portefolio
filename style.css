@@ -729,12 +729,29 @@ input:checked + .slider:before {
   margin: 18px;
   border-radius: 22px;
   background-color: rgba(255, 255, 255, 0.05);
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 1;
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
 }
 
 .project-info {
   flex: 1;
   color: #fff;
-  padding: 22px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -742,8 +759,8 @@ input:checked + .slider:before {
 }
 
 .project-info h3 {
-  color: #00bfff;
-  font-size: 1.1rem;
+  color: #e3e9eb;
+  font-size: 2rem;
   margin: 0 0 12px;
 }
 
@@ -915,3 +932,23 @@ input:checked + .slider:before {
   box-shadow: 0 3px 0 rgba(255, 255, 255, 0.8);
 }
 
+.light-mode .project-card {
+  box-shadow: 0 10px 70px 0 rgb(0, 0, 0);
+}
+
+.light-mode .frame img,
+.light-mode .project-media img {
+  filter: drop-shadow(0 2px 8px rgb(0, 0, 0));
+}
+
+/* Désactive l'ombre uniquement sur les logos LinkedIn, GitHub et email dans .frame et .project-media */
+.light-mode .frame img[src*="linkedin"],
+.light-mode .frame img[src*="github"],
+.light-mode .frame img[src*="gmail"],
+.light-mode .frame img[src*="email"],
+.light-mode .project-media img[src*="linkedin"],
+.light-mode .project-media img[src*="github"],
+.light-mode .project-media img[src*="gmail"],
+.light-mode .project-media img[src*="email"] {
+  filter: none;
+}

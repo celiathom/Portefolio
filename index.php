@@ -147,15 +147,17 @@
 
   <div class="cards-grid">
     <div class="project-card neon-red">
-      <div class="project-media"></div>
+      <div class="project-media" style="position:relative;">
+        <img src="assets/puissance4.png" alt="Puissance 4" style="width:100%;height:100%;object-fit:cover;border-radius:18px;display:block;">
+        <a href="https://celiathom.github.io/puissance4/" target="_blank" class="media-overlay">Voir mon projet</a>
+      </div>
       <div class="project-info">
-        <h3>PUISSANCE 4</h3>
-        <p>
-          Puissance 4 – Jeu interactif développé en JavaScript.
+        <h3 class="project-title" style="margin-top:0.1em;font-size:1.5rem;">PUISSANCE 4</h3>
+        <p style="margin-top: 0.1em;">
+          Jeu interactif développé en JavaScript.
           Un jeu web classique entièrement codé à la main, avec animations de placement,
           tour par tour, et détection automatique du gagnant.
         </p>
-        <small>By Célia • 4 days ago</small>
         <div class="tech-buttons">
           <span class="btn html">HTML</span>
           <span class="btn js">JS</span>
@@ -163,24 +165,33 @@
         </div>
       </div>
     </div>
-
+    
     <div class="project-card neon-blue">
-      <div class="project-media"></div>
+      <div class="project-media" style="position:relative; box-shadow: 0 0 32px 0 rgba(30,30,30,0.45);">
+        <img src="assets/Capture d’écran du 2025-06-03 00-05-24.png" alt="Projet Capture" style="width:100%;height:100%;object-fit:cover;border-radius:18px;display:block;">
+        <a href="#" class="media-overlay" style="background:rgba(30,30,30,0.82);">Voir mon projet</a>
+      </div>
       <div class="project-info">
-        <h3>LOREM IPSUM</h3>
-        <p>Contenu de ta carte ici...</p>
+        <h3 style="font-size:1.5rem;">PROJET TWITTER</h3>
+        <p style="margin-top:-0.1em;">Projet de réseau social façon Twitter pour étudiants. Fonctionnalités : tweets (140 caractères), hashtags, mentions, messages privés, followers, profil, recherche.</p>
         <div class="tech-buttons">
+          <span class="btn php">PHP</span>
           <span class="btn html">HTML</span>
           <span class="btn css">CSS</span>
+          <span class="btn js">JS</span>
+          <span class="btn sql">SQL</span>
         </div>
       </div>
     </div>
 
     <div class="project-card neon-yellow">
-      <div class="project-media"></div>
+      <div class="project-media" style="background: #fff; border-radius: 22px; position: relative; width: 260px; height: 254px; overflow: hidden;">
+        <img src="assets/IMG_5508.PNG" alt="Snapchat style" style="width:100%; height:100%; object-fit:cover; border-radius:18px; display:block;">
+        <a href="#" class="media-overlay">Voir le projet</a>
+      </div>
       <div class="project-info">
-        <h3>LOREM IPSUM</h3>
-        <p>Contenu de ta carte ici...</p>
+        <h3 style="color:#fff; font-size:1.5rem; margin-top:0.2em;">SNAPCHAT</h3>
+        <p style="color:#fff; margin-top:0.1em;">Reproduction d’un écran d’accueil façon Snapchat, avec fond jaune, logo centré, boutons arrondis et navigation mobile.</p>
         <div class="tech-buttons">
           <span class="btn html">HTML</span>
           <span class="btn css">CSS</span>
@@ -231,16 +242,40 @@
 
 <style>
 .project-media {
-  width: 100%;
-  height: 200px; /* ou la hauteur que tu veux */
+  width: 260px;
+  height: 254px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  border-radius: 22px;
 }
-.project-media video {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 12px;
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+.media-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30,30,30,0.88);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 18px;
+  transition: opacity 0.3s;
+  z-index: 2;
+  letter-spacing: 1px;
+}
+.project-media:hover .media-overlay {
+  opacity: 1;
 }
 </style>
