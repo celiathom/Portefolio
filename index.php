@@ -187,23 +187,29 @@
     <div class="project-card neon-yellow">
       <div class="project-media" style="background: #fff; border-radius: 22px; position: relative; width: 260px; height: 254px; overflow: hidden;">
         <img src="assets/IMG_5508.PNG" alt="Snapchat style" style="width:100%; height:100%; object-fit:cover; border-radius:18px; display:block;">
-        <a href="#" class="media-overlay">Voir le projet</a>
+        <a href="#" class="media-overlay">Voir mon projet</a>
       </div>
       <div class="project-info">
-        <h3 style="color:#fff; font-size:1.5rem; margin-top:0.2em;">SNAPCHAT</h3>
-        <p style="color:#fff; margin-top:0.1em;">Reproduction d’un écran d’accueil façon Snapchat, avec fond jaune, logo centré, boutons arrondis et navigation mobile.</p>
+        <h3 style="color:#fff; font-size:1.5rem; margin-top:0.1em;">SNAPCHAT</h3>
+        <p style="color:#fff; margin-top:0.1em;">Application mobile Snapchat.
+Fonctionnalités : inscription, connexion, envoi et réception de photos éphémères.
+Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaque snap.</p>
         <div class="tech-buttons">
-          <span class="btn html">HTML</span>
-          <span class="btn css">CSS</span>
+          <span class="btn html">React Native</span>
+          <span class="btn css">JS</span>
+          
         </div>
       </div>
     </div>
 
     <div class="project-card neon-orange">
-      <div class="project-media"></div>
+      <div class="project-media" style="background: #fff; border-radius: 22px; position: relative; width: 260px; height: 254px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <img src="assets/Capture d’écran du 2025-06-10 10-25-15.png" alt="Projet orange" style="width:100%; height:100%; object-fit:cover; border-radius:18px; display:block;">
+        <a href="#" class="media-overlay">Voir le projet</a>
+      </div>
       <div class="project-info">
-        <h3>LOREM IPSUM</h3>
-        <p>Contenu de ta carte ici...</p>
+        <h3 style="color:#fff; font-size:1.5rem; margin-top:0.2em;">LOREM IPSUM</h3>
+        <p style="color:#fff; margin-top:0.1em;">Contenu de ta carte ici...</p>
         <div class="tech-buttons">
           <span class="btn html">HTML</span>
           <span class="btn js">JS</span>
