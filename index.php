@@ -208,11 +208,12 @@ Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaq
         <a href="#" class="media-overlay">Voir le projet</a>
       </div>
       <div class="project-info">
-        <h3 style="color:#fff; font-size:1.5rem; margin-top:0.2em;">LOREM IPSUM</h3>
-        <p style="color:#fff; margin-top:0.1em;">Contenu de ta carte ici...</p>
+        <h3 style="color:#fff; font-size:1.5rem; margin-top:0.2em;">My Wysiwyg</h3>
+        <p style="color:#fff; margin-top:0.1em;">Création d’un éditeur de texte, personnalisable. Il permet de formater du texte (gras, italique, couleur…), sauvegarder le contenu et gérer l’affichage via un module réutilisable.</p>
         <div class="tech-buttons">
           <span class="btn html">HTML</span>
-          <span class="btn js">JS</span>
+          <span class="btn js">CSS</span>
+          <span class="btn js">JavaScript</span>
         </div>
       </div>
     </div>
