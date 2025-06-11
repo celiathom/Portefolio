@@ -217,6 +217,20 @@ Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaq
         </div>
       </div>
     </div>
+
+    <div class="project-card neon-green">
+      <div class="project-media" style="position:relative;">
+        <img src="assets/CELIA THOMIAS MONOGRAMME.png" alt="Projet Monogramme" style="width:100%;height:100%;object-fit:cover;border-radius:20px;display:block;">
+        <a href="#" class="media-overlay" id="voir-plus-monogramme">Voir mon projet</a>
+      </div>
+      <div class="project-info">
+        <h3 style="font-size:1.5rem;">MONOGRAMME</h3>
+        <p style="margin-top:-0.5rem;">Ce logo représente mes initiales. Mes couleurs favorites, pour refléter ma personnalité. La typographie du T évoque la forme d’un parapluie, tandis que celle du C rappelle une goutte d’eau, créant ainsi un lien visuel poétique entre les deux éléments.</p>
+        <div class="tech-buttons">
+          <span class="btn html">Illustrator</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <script>
@@ -227,9 +241,9 @@ Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaq
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop) {
-      navbar.classList.add('hide'); // scroll vers le bas → cache
+      navbar.classList.add('hide');
     } else {
-      navbar.classList.remove('hide'); // scroll vers le haut → montre
+      navbar.classList.remove('hide');
     }
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
@@ -286,3 +300,9 @@ Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaq
   opacity: 1;
 }
 </style>
+<script>
+document.getElementById('voir-plus-monogramme').onclick = function(e) {
+  e.preventDefault();
+  window.open('assets/MONOGRAMME.pdf', '_blank');
+};
+</script>
