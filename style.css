@@ -708,6 +708,10 @@ input:checked + .slider:before {
   box-shadow: 0 0 40px rgba(255, 140, 0, 0.8);
 }
 
+.project-card.neon-green:hover {
+  box-shadow: 0 0 40px 0 #347204, 0 0 16px 0 #347204;
+}
+
 .neon-red {
   background: linear-gradient(to bottom, #181717, #4b1010);
 }
@@ -805,6 +809,12 @@ input:checked + .slider:before {
 .project-card.neon-orange .btn {
   background: linear-gradient(to right, #ff8c00, #ffb347);
   box-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+}
+
+.project-card.neon-green .btn {
+  background: linear-gradient(to right, #3a7d1c, #3a7d1c);
+  color: #fff;
+  box-shadow: 0 0 10px 2px #6eeb087e;
 }
 
 .cards-grid {
@@ -951,4 +961,24 @@ input:checked + .slider:before {
 .light-mode .project-media img[src*="gmail"],
 .light-mode .project-media img[src*="email"] {
   filter: none;
+}
+
+.project-card.neon-green::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  background: radial-gradient(circle, #6eeb0869 0%, #3b7d1c81 60%, transparent 100%);
+  filter: blur(32px);
+  opacity: 0.45;
+  z-index: 1;
+  pointer-events: none;
+}
+.project-card.neon-green > * {
+  position: relative;
+  z-index: 2;
 }

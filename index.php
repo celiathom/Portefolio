@@ -205,7 +205,7 @@ Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaq
     <div class="project-card neon-orange">
       <div class="project-media" style="background: #fff; border-radius: 22px; position: relative; width: 260px; height: 254px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
         <img src="assets/Capture d’écran du 2025-06-10 10-25-15.png" alt="Projet orange" style="width:100%; height:100%; object-fit:cover; border-radius:18px; display:block;">
-        <a href="#" class="media-overlay">Voir le projet</a>
+        <a href="#" class="media-overlay" id="voir-plus-wysiwyg">Voir le projet</a>
       </div>
       <div class="project-info">
         <h3 style="color:#fff; font-size:1.5rem; margin-top:0.2em;">My Wysiwyg</h3>
@@ -304,5 +304,9 @@ Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaq
 document.getElementById('voir-plus-monogramme').onclick = function(e) {
   e.preventDefault();
   window.open('assets/MONOGRAMME.pdf', '_blank');
+};
+document.getElementById('voir-plus-wysiwyg').onclick = function(e) {
+  e.preventDefault();
+  window.open('https://celiathom.github.io/my_wysiwyg/', '_blank');
 };
 </script>
