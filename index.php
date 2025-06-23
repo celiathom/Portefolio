@@ -169,7 +169,7 @@
     <div class="project-card neon-blue">
       <div class="project-media" style="position:relative; box-shadow: 0 0 32px 0 rgba(30,30,30,0.45);">
         <img src="assets/Capture d’écran du 2025-06-03 00-05-24.png" alt="Projet Capture" style="width:100%;height:100%;object-fit:cover;border-radius:18px;display:block;">
-        <a href="#" class="media-overlay" style="background:rgba(30,30,30,0.82);">Voir mon projet</a>
+        <a href="assets/Votre texte de paragraphe-2.pdf" class="media-overlay" style="background:rgba(30,30,30,0.82);" target="_blank">Voir le PDF du projet</a>
       </div>
       <div class="project-info">
         <h3 style="font-size:1.5rem;">PROJET TWITTER</h3>
@@ -187,7 +187,7 @@
     <div class="project-card neon-yellow">
       <div class="project-media" style="background: #fff; border-radius: 22px; position: relative; width: 260px; height: 254px; overflow: hidden;">
         <img src="assets/IMG_5508.PNG" alt="Snapchat style" style="width:100%; height:100%; object-fit:cover; border-radius:18px; display:block;">
-        <a href="#" class="media-overlay">Voir mon projet</a>
+        <a href="assets/snap.pdf" class="media-overlay" target="_blank">Voir le PDF du projet</a>
       </div>
       <div class="project-info">
         <h3 style="color:#fff; font-size:1.5rem; margin-top:0.1em;">SNAPCHAT</h3>
@@ -205,7 +205,7 @@ Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaq
     <div class="project-card neon-orange">
       <div class="project-media" style="background: #fff; border-radius: 22px; position: relative; width: 260px; height: 254px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
         <img src="assets/Capture d’écran du 2025-06-10 10-25-15.png" alt="Projet orange" style="width:100%; height:100%; object-fit:cover; border-radius:18px; display:block;">
-        <a href="#" class="media-overlay" id="voir-plus-wysiwyg">Voir le projet</a>
+        <a href="https://celiathom.github.io/my_wysiwyg/" class="media-overlay" target="_blank">Voir le projet</a>
       </div>
       <div class="project-info">
         <h3 style="color:#fff; font-size:1.5rem; margin-top:0.2em;">My Wysiwyg</h3>
@@ -220,8 +220,8 @@ Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaq
 
     <div class="project-card neon-green">
       <div class="project-media" style="position:relative;">
-        <img src="assets/CELIA THOMIAS MONOGRAMME.png" alt="Projet Monogramme" style="width:100%;height:100%;object-fit:cover;border-radius:20px;display:block;">
-        <a href="#" class="media-overlay" id="voir-plus-monogramme">Voir mon projet</a>
+        <img src="assets/Capture d’écran du 2025-06-23 10-30-23.png" alt="Capture d’écran projet" style="width:100%;height:100%;object-fit:cover;border-radius:20px;display:block;">
+        <a href="assets/Copie de CELIA THOMIAS MONOGRAMME.pdf" class="media-overlay" id="voir-plus-monogramme" target="_blank">Voir mon projet</a>
       </div>
       <div class="project-info">
         <h3 style="font-size:1.5rem;">MONOGRAMME</h3>
@@ -304,9 +304,5 @@ Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaq
 document.getElementById('voir-plus-monogramme').onclick = function(e) {
   e.preventDefault();
   window.open('assets/MONOGRAMME.pdf', '_blank');
-};
-document.getElementById('voir-plus-wysiwyg').onclick = function(e) {
-  e.preventDefault();
-  window.open('https://celiathom.github.io/my_wysiwyg/', '_blank');
 };
 </script>
