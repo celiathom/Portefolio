@@ -44,7 +44,7 @@ body {
 
 .navbar {
   position: fixed;
-  top: 20px; /* un peu d'espace en haut */
+  top: 40px; /* descendu de 20px à 40px */
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
@@ -77,7 +77,7 @@ body {
 
 .frontend-section {
   position: relative;
-  margin-top: 6rem;
+  margin-top: 2rem; /* Remonté de 6rem à 2rem */
   text-align: center;
 }
 
@@ -183,10 +183,10 @@ input:checked + .slider:before {
 }
 
 .ellipse {
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(60px);
   opacity: 0.9;
   mix-blend-mode: screen;
 }
@@ -194,25 +194,31 @@ input:checked + .slider:before {
 .jaune {
   background: #e0e033;
   opacity: 400;
-  width: 300px;
-  height: 300px;
+  width: 260px;
+  height: 260px;
 }
 .orange {
   background: #ffa500;
   margin-left: -50px;
+  width: 260px;
+  height: 260px;
 }
 .red {
   background: hsl(0, 100%, 50%);
   margin-left: -80px;
+  width: 260px;
+  height: 260px;
 }
 .blue {
   background: blue;
   margin-left: -80px;
+  width: 260px;
+  height: 260px;
 }
 
 .texte-titre {
   position: absolute;
-  top: 50%;
+  top: 60%; /* Descendu de 50% à 60% pour éviter la navbar */
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -364,9 +370,9 @@ input:checked + .slider:before {
 
 .ellipse-container .ellipse {
   position: absolute;
-  width: 900px;
-  height: 200px;
-  filter: blur(150px);
+  width: 600px;
+  height: 150px;
+  filter: blur(100px);
   mix-blend-mode: screen;
   z-index: 1;
 }
@@ -379,35 +385,37 @@ input:checked + .slider:before {
 .light-mode .ellipse-container .red {
   background: #ff1a1af6;
   opacity: 0.7;
-  width: 700px;
-  height: 650px;
-  top: 200px; /* ← Augmente la valeur pour descendre l'ellipse */
+  width: 500px;
+  height: 450px;
+  top: 50%; /* aligné comme le fond noir */
 }
 
 .light-mode .ellipse-container .blue {
   background: #3434fff5;
   opacity: 2;
-  width: 750px;
-  height: 650px;
-  top: 200px; /* ← Augmente la valeur pour descendre l'ellipse */
+  width: 550px;
+  height: 450px;
+  top: 50%; /* aligné comme le fond noir */
 }
 
 .ellipse-container .blue {
   background: rgba(0, 0, 255, 0.473);
-  width: 700px;
-  height: 500px;
+  width: 500px;
+  height: 500px; /* Hauteur égale à la largeur pour un cercle parfait */
   position: absolute;
-  top: 300px;
-  right: 41%;
+  top: 50%;
+  left: 28%; /* rapproché mais moins collé qu'avant */
+  transform: translateY(-50%);
 }
 
 .ellipse-container .red {
   background: rgba(255, 0, 0, 0.404);
-  width: 700px;
-  height: 500px;
+  width: 500px;
+  height: 500px; /* Hauteur égale à la largeur pour un cercle parfait */
   position: absolute;
-  top: 300px; /* même positionnement vertical que la bleue */
-  left: 45%;
+  top: 50%;
+  right: 28%; /* rapproché mais moins collé qu'avant */
+  transform: translateY(-50%);
   opacity: 9;
 }
 
@@ -492,8 +500,8 @@ input:checked + .slider:before {
 .titre-frontend {
   font-size: 2.5rem;
   color: white;
-  margin-bottom: 8rem;
-  margin-top: -10rem;
+  margin-bottom: 4rem; /* Réduit de 8rem à 4rem */
+  margin-top: -6rem; /* Remonté de -10rem à -6rem */
   text-align: center;
 }
 
@@ -509,8 +517,9 @@ input:checked + .slider:before {
   gap: 3rem;
   justify-items: center;
   align-items: center;
-  max-width: 900px;
+  max-width: 1100px; /* Augmenté de 900px à 1100px pour avoir plus d'espace */
   margin: 0 auto;
+  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage */
 }
 
 .frame {
@@ -581,15 +590,24 @@ input:checked + .slider:before {
   color: #111;
 }
 
+/* Correction : remonter le titre Backend / BDD sur mobile */
+@media (max-width: 768px) {
+  .titre-backend {
+    margin-top: -2rem !important;
+    margin-bottom: 4rem !important;
+  }
+}
+
 .backend-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
   justify-content: center;
-  max-width: 600px;
+  max-width: 800px; /* Augmenté de 600px à 800px pour plus d'espace */
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage */
 }
 
 .aura-backend {
@@ -627,6 +645,9 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage des frames */
+  max-width: 1000px; /* Ajout d'une largeur max pour plus d'espace */
+  margin: 0 auto; /* Centrage du conteneur */
 }
 
 .ligne-haut {
@@ -899,9 +920,114 @@ input:checked + .slider:before {
 .light-mode .orange,
 .light-mode .red,
 .light-mode .blue {
-  width: 390px; /* ou plus, selon la taille désirée */
-  height: 390px;
+  width: 320px;
+  height: 320px;
 }
+
+/* Desktop : toutes les ellipses du fond, mode sombre et clair, même taille */
+.jaune,
+.orange,
+.red,
+.blue {
+  width: 320px;
+  height: 320px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* ajuste selon la hauteur de ta navbar */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 0.4s, color 0.4s;
+}
+body {
+  padding-top: 110px; /* ajuste selon la hauteur exacte de ta navbar */
+}
+
+.dark-mode {
+  background: #1e1e1e;
+  color: white;
+}
+
+.light-mode {
+  background: #d9d9df;
+  color: #e4dede;
+}
+
+.aura-sass {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, red 10%, orange 60%, yellow 70%);
+  filter: blur(50px);
+  z-index: 0;
+  top: 38%;
+  left: 25%;
+  transform: translate(-50%, -100%) scale(0.45);
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.navbar {
+  position: fixed;
+  top: 40px; /* descendu de 20px à 40px */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: 50%;
+  max-width: 1100px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+  background: #2c2c2c;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+  transition: top 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 5em; /* espace entre les liens et le switch */
+}
+
+.navbar.hide {
+  top: -100px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.frontend-section {
+  position: relative;
+  margin-top: 2rem; /* Remonté de 6rem à 2rem */
+  text-align: center;
+}
+
+.light-mode .navbar {
+  background: #ffffff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 9rem;
+  margin: 0;
+  padding: 0;
+}
+
 .nav-links li a {
   text-decoration: none;
   color: white;
@@ -909,76 +1035,1686 @@ input:checked + .slider:before {
   font-weight: bold;
   font-size: 0.9rem;
   position: relative;
-  padding-bottom: 5px;
-  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover animation */
-.nav-links li a:hover {
-  transform: scale(1.1);
-}
-
-/* Quand le lien est actif = ombre noire en bas */
-.nav-links li.active a {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
-}
-
-/* Mode clair */
 .light-mode .nav-links li a {
   color: black;
 }
 
-.light-mode .nav-links li.active a {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
-}
-
-/* lien actif en mode clair */
-.light-mode .nav-links li.active a {
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.6);
-}
-
-/* lien actif en mode sombre */
-.nav-links li.active a {
-  box-shadow: 0 3px 0 rgba(255, 255, 255, 0.8);
-}
-
-.light-mode .project-card {
-  box-shadow: 0 10px 70px 0 rgb(0, 0, 0);
-}
-
-.light-mode .frame img,
-.light-mode .project-media img {
-  filter: drop-shadow(0 2px 8px rgb(0, 0, 0));
-}
-
-/* Désactive l'ombre uniquement sur les logos LinkedIn, GitHub et email dans .frame et .project-media */
-.light-mode .frame img[src*="linkedin"],
-.light-mode .frame img[src*="github"],
-.light-mode .frame img[src*="gmail"],
-.light-mode .frame img[src*="email"],
-.light-mode .project-media img[src*="linkedin"],
-.light-mode .project-media img[src*="github"],
-.light-mode .project-media img[src*="gmail"],
-.light-mode .project-media img[src*="email"] {
-  filter: none;
-}
-
-.project-card.neon-green::before {
+/*.nav-links li.active a::after {
   content: "";
   position: absolute;
-  top: 50%;
   left: 50%;
-  width: 90%;
-  height: 90%;
-  transform: translate(-50%, -50%);
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+} */
+
+.light-mode .nav-links li.active a::after {
+  background: black;
+}
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  --background: #4b4a4e;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
   border-radius: 30px;
-  background: radial-gradient(circle, #6eeb0869 0%, #3b7d1c81 60%, transparent 100%);
-  filter: blur(32px);
-  opacity: 0.45;
+}
+
+.slider:before {
+  content: "🟡";
+  position: absolute;
+  font-size: 1em;
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  transition: 0.5s;
+}
+
+input:checked + .slider:before {
+  content: "🌑";
+  transform: translateX(100%);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: rem;
+}
+
+.ellipse {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.9;
+  mix-blend-mode: screen;
+}
+
+.jaune {
+  background: #e0e033;
+  opacity: 400;
+  width: 260px;
+  height: 260px;
+}
+.orange {
+  background: #ffa500;
+  margin-left: -50px;
+  width: 260px;
+  height: 260px;
+}
+.red {
+  background: hsl(0, 100%, 50%);
+  margin-left: -80px;
+  width: 260px;
+  height: 260px;
+}
+.blue {
+  background: blue;
+  margin-left: -80px;
+  width: 260px;
+  height: 260px;
+}
+
+.texte-titre {
+  position: absolute;
+  top: 60%; /* Descendu de 50% à 60% pour éviter la navbar */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.light-mode .texte-titre {
+  color: #111;
+}
+
+.celia {
+  transform: translateX(-175px); /* Tu peux ajuster -10px, -30px… */
+  display: inline-block;
+  font-size: 5rem; /* ajuste selon le look que tu veux */
+  font-weight: bold;
+  margin-top: 5rem; /* ← c’est ça qui descend le texte */
+}
+
+.bonjour {
+  transform: translateX(-205px);
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.metier {
+  font-size: 4rem;
+  font-weight: 400;
+  transform: translateY(-140px);
+}
+.metier2 {
+  transform: translateX(-390px);
+  margin-top: -13rem;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-left: 186px;
+  font-weight: normal;
+}
+
+.bouton-cv {
+  position: absolute;
+  top: 94%;
+  left: 900px; /* ← Ajuste ici jusqu’à ce que ça te plaise */
+  z-index: 3;
+}
+
+.bouton-cv a {
+  text-decoration: none;
+  background-color: #3b3b3b;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  text-align: center;
+}
+
+.bouton-cv a:hover {
+  background-color: #5a5a5a;
+  transform: scale(1.05);
+}
+
+.light-mode .bouton-cv a {
+  background-color: #ffffff;
+  color: #111111;
+  padding: 0.8rem 1.8rem;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.light-mode .bouton-cv a:hover {
+  background-color: #f1f1f1;
+  color: #000000;
+}
+
+.social-icons {
+  position: absolute;
+  top: 94%;
+  left: 1140px; /* ← Essaie cette valeur pour voir */
+  display: flex;
+  gap: 1.5rem;
+  z-index: 3;
+}
+
+.icon-btn {
+  background-color: #3b3b3b;
+  padding: 0.6rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(1.1);
+}
+
+.icon-btn:hover {
+  background-color: #5a5a5a;
+  transform: scale(1.1);
+}
+
+.light-mode .icon-btn {
+  background-color: #ffffff;
+}
+
+.light-mode .icon-btn:hover {
+  background-color: #ffffff;
+}
+
+.light-mode .icon-btn img {
+  filter: brightness(0) saturate(100%);
+}
+.ellipse-container {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  margin-top: 8rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0; /* Ajoute cette ligne ou réduis la valeur si déjà présente */
+}
+
+.apropos-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ellipse-container .ellipse {
+  position: absolute;
+  width: 600px;
+  height: 150px;
+  filter: blur(100px);
+  mix-blend-mode: screen;
   z-index: 1;
+}
+
+.light-mode .ellipse {
+  mix-blend-mode: normal;
+  opacity: 0, 1;
+}
+
+.light-mode .ellipse-container .red {
+  background: #ff1a1af6;
+  opacity: 0.7;
+  width: 500px;
+  height: 450px;
+  top: 50%; /* aligné comme le fond noir */
+}
+
+.light-mode .ellipse-container .blue {
+  background: #3434fff5;
+  opacity: 2;
+  width: 550px;
+  height: 450px;
+  top: 50%; /* aligné comme le fond noir */
+}
+
+.ellipse-container .blue {
+  background: rgba(0, 0, 255, 0.473);
+  width: 500px;
+  height: 500px; /* Hauteur égale à la largeur pour un cercle parfait */
+  position: absolute;
+  top: 50%;
+  left: 28%; /* rapproché mais moins collé qu'avant */
+  transform: translateY(-50%);
+}
+
+.ellipse-container .red {
+  background: rgba(255, 0, 0, 0.404);
+  width: 500px;
+  height: 500px; /* Hauteur égale à la largeur pour un cercle parfait */
+  position: absolute;
+  top: 50%;
+  right: 28%; /* rapproché mais moins collé qu'avant */
+  transform: translateY(-50%);
+  opacity: 9;
+}
+
+.titre-apropos {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  margin-top: 8rem;
+  color: white;
+}
+
+.light-mode .titre-apropos {
+  color: #111;
+}
+
+.apropos-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.texte-gauche {
+  flex: 1;
+  color: white;
+  padding-right: 4rem;
+  transform: translateX(200px);
+  text-align: center;
+  margin-top: -4rem;
+}
+
+.light-mode .texte-gauche {
+  color: hsl(0, 0%, 7%);
+}
+
+.citation {
+  font-style: italic;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.light-mode .citation {
+  color: #111;
+}
+
+.texte-gauche h2 {
+  font-size: 2.5rem;
+  margin-bottom: 500rem;
+  margin-top: rem;
+}
+
+.texte-gauche p {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+.image-droite {
+  flex: 1;
+  text-align: right;
+}
+
+.image-droite img {
+  width: 700px;
+  height: auto;
+  border-radius: 20px;
+  transform: translateX(40px);
+}
+
+.frontend-section {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.titre-frontend {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 4rem; /* Réduit de 8rem à 4rem */
+  margin-top: -6rem; /* Remonté de -10rem à -6rem */
+  text-align: center;
+}
+
+.light-mode .titre-frontend {
+  color: #111;
+}
+
+.frames-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 1100px; /* Augmenté de 900px à 1100px pour avoir plus d'espace */
+  margin: 0 auto;
+  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage */
+}
+
+.frame {
+  width: 180px;
+  height: 180px;
+  background: transparent;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: float 2s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.frame img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.frame-label {
+  position: absolute;
+  bottom: 10px;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.2rem 0.8rem;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.light-mode .frame-label {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #111;
+}
+
+.frame:hover .frame-label {
+  opacity: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.backend-section {
+  margin-top: 8rem;
+  text-align: center;
+  position: relative;
+}
+
+.titre-backend {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 9rem;
+}
+
+.light-mode .titre-backend {
+  color: #111;
+}
+
+/* Correction : remonter le titre Backend / BDD sur mobile */
+@media (max-width: 768px) {
+  .titre-backend {
+    margin-top: -2rem !important;
+    margin-bottom: 4rem !important;
+  }
+}
+
+.backend-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  justify-content: center;
+  max-width: 800px; /* Augmenté de 600px à 800px pour plus d'espace */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage */
+}
+
+.aura-backend {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 10%, #2e5cff 40%, #0b206e 70%);
+  filter: blur(35px);
+  z-index: 0;
+  top: 80%;
+  left: 64%;
+  transform: translate(-50%, -50%) scale(1);
   pointer-events: none;
 }
-.project-card.neon-green > * {
+
+.outils-section {
+  margin-top: 8rem;
+  text-align: center;
+  position: relative;
+}
+
+.titre-outils {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 5rem;
+}
+
+.light-mode .titre-outils {
+  color: #111;
+}
+
+.outils-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage des frames */
+  max-width: 1000px; /* Ajout d'une largeur max pour plus d'espace */
+  margin: 0 auto; /* Centrage du conteneur */
+}
+
+.ligne-haut {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.ligne-bas {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+.aura-outils {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1a1919 25%, #ffffff 100%);
+  filter: blur(22px);
+  opacity: 0.7; /* ← augmente la valeur (exemple : 0.7 pour plus visible) */
+  z-index: 0;
+  top: 406%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.outils-container {
   position: relative;
   z-index: 2;
 }
+
+/*.nav-links li.active a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+} */
+
+.light-mode .jaune,
+.light-mode .orange,
+.light-mode .red,
+.light-mode .blue {
+  width: 320px;
+  height: 320px;
+}
+
+/* Desktop : toutes les ellipses du fond, mode sombre et clair, même taille */
+.jaune,
+.orange,
+.red,
+.blue {
+  width: 320px;
+  height: 320px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* ajuste selon la hauteur de ta navbar */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 0.4s, color 0.4s;
+}
+body {
+  padding-top: 110px; /* ajuste selon la hauteur exacte de ta navbar */
+}
+
+.dark-mode {
+  background: #1e1e1e;
+  color: white;
+}
+
+.light-mode {
+  background: #d9d9df;
+  color: #e4dede;
+}
+
+.aura-sass {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, red 10%, orange 60%, yellow 70%);
+  filter: blur(50px);
+  z-index: 0;
+  top: 38%;
+  left: 25%;
+  transform: translate(-50%, -100%) scale(0.45);
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.navbar {
+  position: fixed;
+  top: 40px; /* descendu de 20px à 40px */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: 50%;
+  max-width: 1100px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+  background: #2c2c2c;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+  transition: top 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 5em; /* espace entre les liens et le switch */
+}
+
+.navbar.hide {
+  top: -100px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.frontend-section {
+  position: relative;
+  margin-top: 2rem; /* Remonté de 6rem à 2rem */
+  text-align: center;
+}
+
+.light-mode .navbar {
+  background: #ffffff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 9rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.light-mode .nav-links li a {
+  color: black;
+}
+
+/*.nav-links li.active a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+} */
+
+.light-mode .nav-links li.active a::after {
+  background: black;
+}
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  --background: #4b4a4e;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  content: "🟡";
+  position: absolute;
+  font-size: 1em;
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  transition: 0.5s;
+}
+
+input:checked + .slider:before {
+  content: "🌑";
+  transform: translateX(100%);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: rem;
+}
+
+.ellipse {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.9;
+  mix-blend-mode: screen;
+}
+
+.jaune {
+  background: #e0e033;
+  opacity: 400;
+  width: 260px;
+  height: 260px;
+}
+.orange {
+  background: #ffa500;
+  margin-left: -50px;
+  width: 260px;
+  height: 260px;
+}
+.red {
+  background: hsl(0, 100%, 50%);
+  margin-left: -80px;
+  width: 260px;
+  height: 260px;
+}
+.blue {
+  background: blue;
+  margin-left: -80px;
+  width: 260px;
+  height: 260px;
+}
+
+.texte-titre {
+  position: absolute;
+  top: 60%; /* Descendu de 50% à 60% pour éviter la navbar */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.light-mode .texte-titre {
+  color: #111;
+}
+
+.celia {
+  transform: translateX(-175px); /* Tu peux ajuster -10px, -30px… */
+  display: inline-block;
+  font-size: 5rem; /* ajuste selon le look que tu veux */
+  font-weight: bold;
+  margin-top: 5rem; /* ← c’est ça qui descend le texte */
+}
+
+.bonjour {
+  transform: translateX(-205px);
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.metier {
+  font-size: 4rem;
+  font-weight: 400;
+  transform: translateY(-140px);
+}
+.metier2 {
+  transform: translateX(-390px);
+  margin-top: -13rem;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-left: 186px;
+  font-weight: normal;
+}
+
+.bouton-cv {
+  position: absolute;
+  top: 94%;
+  left: 900px; /* ← Ajuste ici jusqu’à ce que ça te plaise */
+  z-index: 3;
+}
+
+.bouton-cv a {
+  text-decoration: none;
+  background-color: #3b3b3b;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  text-align: center;
+}
+
+.bouton-cv a:hover {
+  background-color: #5a5a5a;
+  transform: scale(1.05);
+}
+
+.light-mode .bouton-cv a {
+  background-color: #ffffff;
+  color: #111111;
+  padding: 0.8rem 1.8rem;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.light-mode .bouton-cv a:hover {
+  background-color: #f1f1f1;
+  color: #000000;
+}
+
+.social-icons {
+  position: absolute;
+  top: 94%;
+  left: 1140px; /* ← Essaie cette valeur pour voir */
+  display: flex;
+  gap: 1.5rem;
+  z-index: 3;
+}
+
+.icon-btn {
+  background-color: #3b3b3b;
+  padding: 0.6rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(1.1);
+}
+
+.icon-btn:hover {
+  background-color: #5a5a5a;
+  transform: scale(1.1);
+}
+
+.light-mode .icon-btn {
+  background-color: #ffffff;
+}
+
+.light-mode .icon-btn:hover {
+  background-color: #ffffff;
+}
+
+.light-mode .icon-btn img {
+  filter: brightness(0) saturate(100%);
+}
+.ellipse-container {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  margin-top: 8rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0; /* Ajoute cette ligne ou réduis la valeur si déjà présente */
+}
+
+.apropos-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ellipse-container .ellipse {
+  position: absolute;
+  width: 600px;
+  height: 150px;
+  filter: blur(100px);
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+
+.light-mode .ellipse {
+  mix-blend-mode: normal;
+  opacity: 0, 1;
+}
+
+.light-mode .ellipse-container .red {
+  background: #ff1a1af6;
+  opacity: 0.7;
+  width: 500px;
+  height: 450px;
+  top: 50%; /* aligné comme le fond noir */
+}
+
+.light-mode .ellipse-container .blue {
+  background: #3434fff5;
+  opacity: 2;
+  width: 550px;
+  height: 450px;
+  top: 50%; /* aligné comme le fond noir */
+}
+
+.ellipse-container .blue {
+  background: rgba(0, 0, 255, 0.473);
+  width: 500px;
+  height: 500px; /* Hauteur égale à la largeur pour un cercle parfait */
+  position: absolute;
+  top: 50%;
+  left: 28%; /* rapproché mais moins collé qu'avant */
+  transform: translateY(-50%);
+}
+
+.ellipse-container .red {
+  background: rgba(255, 0, 0, 0.404);
+  width: 500px;
+  height: 500px; /* Hauteur égale à la largeur pour un cercle parfait */
+  position: absolute;
+  top: 50%;
+  right: 28%; /* rapproché mais moins collé qu'avant */
+  transform: translateY(-50%);
+  opacity: 9;
+}
+
+.titre-apropos {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  margin-top: 8rem;
+  color: white;
+}
+
+.light-mode .titre-apropos {
+  color: #111;
+}
+
+.apropos-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.texte-gauche {
+  flex: 1;
+  color: white;
+  padding-right: 4rem;
+  transform: translateX(200px);
+  text-align: center;
+  margin-top: -4rem;
+}
+
+.light-mode .texte-gauche {
+  color: hsl(0, 0%, 7%);
+}
+
+.citation {
+  font-style: italic;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.light-mode .citation {
+  color: #111;
+}
+
+.texte-gauche h2 {
+  font-size: 2.5rem;
+  margin-bottom: 500rem;
+  margin-top: rem;
+}
+
+.texte-gauche p {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+.image-droite {
+  flex: 1;
+  text-align: right;
+}
+
+.image-droite img {
+  width: 700px;
+  height: auto;
+  border-radius: 20px;
+  transform: translateX(40px);
+}
+
+.frontend-section {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.titre-frontend {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 4rem; /* Réduit de 8rem à 4rem */
+  margin-top: -6rem; /* Remonté de -10rem à -6rem */
+  text-align: center;
+}
+
+.light-mode .titre-frontend {
+  color: #111;
+}
+
+.frames-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 1100px; /* Augmenté de 900px à 1100px pour avoir plus d'espace */
+  margin: 0 auto;
+  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage */
+}
+
+.frame {
+  width: 180px;
+  height: 180px;
+  background: transparent;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: float 2s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.frame img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.frame-label {
+  position: absolute;
+  bottom: 10px;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.2rem 0.8rem;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.light-mode .frame-label {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #111;
+}
+
+.frame:hover .frame-label {
+  opacity: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.backend-section {
+  margin-top: 8rem;
+  text-align: center;
+  position: relative;
+}
+
+.titre-backend {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 9rem;
+}
+
+.light-mode .titre-backend {
+  color: #111;
+}
+
+/* Correction : remonter le titre Backend / BDD sur mobile */
+@media (max-width: 768px) {
+  .titre-backend {
+    margin-top: -2rem !important;
+    margin-bottom: 4rem !important;
+  }
+}
+
+.backend-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  justify-content: center;
+  max-width: 800px; /* Augmenté de 600px à 800px pour plus d'espace */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage */
+}
+
+.aura-backend {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 10%, #2e5cff 40%, #0b206e 70%);
+  filter: blur(35px);
+  z-index: 0;
+  top: 80%;
+  left: 64%;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: none;
+}
+
+.outils-section {
+  margin-top: 8rem;
+  text-align: center;
+  position: relative;
+}
+
+.titre-outils {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 5rem;
+}
+
+.light-mode .titre-outils {
+  color: #111;
+}
+
+.outils-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage des frames */
+  max-width: 1000px; /* Ajout d'une largeur max pour plus d'espace */
+  margin: 0 auto; /* Centrage du conteneur */
+}
+
+.ligne-haut {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.ligne-bas {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+.aura-outils {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1a1919 25%, #ffffff 100%);
+  filter: blur(22px);
+  opacity: 0.7; /* ← augmente la valeur (exemple : 0.7 pour plus visible) */
+  z-index: 0;
+  top: 406%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.outils-container {
+  position: relative;
+  z-index: 2;
+}
+
+/*.nav-links li.active a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+} */
+
+.light-mode .jaune,
+.light-mode .orange,
+.light-mode .red,
+.light-mode .blue {
+  width: 320px;
+  height: 320px;
+}
+
+/* Desktop : toutes les ellipses du fond, mode sombre et clair, même taille */
+.jaune,
+.orange,
+.red,
+.blue {
+  width: 320px;
+  height: 320px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* ajuste selon la hauteur de ta navbar */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 0.4s, color 0.4s;
+}
+body {
+  padding-top: 110px; /* ajuste selon la hauteur exacte de ta navbar */
+}
+
+.dark-mode {
+  background: #1e1e1e;
+  color: white;
+}
+
+.light-mode {
+  background: #d9d9df;
+  color: #e4dede;
+}
+
+.aura-sass {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, red 10%, orange 60%, yellow 70%);
+  filter: blur(50px);
+  z-index: 0;
+  top: 38%;
+  left: 25%;
+  transform: translate(-50%, -100%) scale(0.45);
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.navbar {
+  position: fixed;
+  top: 40px; /* descendu de 20px à 40px */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: 50%;
+  max-width: 1100px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+  background: #2c2c2c;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+  transition: top 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 5em; /* espace entre les liens et le switch */
+}
+
+.navbar.hide {
+  top: -100px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.frontend-section {
+  position: relative;
+  margin-top: 2rem; /* Remonté de 6rem à 2rem */
+  text-align: center;
+}
+
+.light-mode .navbar {
+  background: #ffffff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 9rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.light-mode .nav-links li a {
+  color: black;
+}
+
+/*.nav-links li.active a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+} */
+
+.light-mode .nav-links li.active a::after {
+  background: black;
+}
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  --background: #4b4a4e;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  content: "🟡";
+  position: absolute;
+  font-size: 1em;
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  transition: 0.5s;
+}
+
+input:checked + .slider:before {
+  content: "🌑";
+  transform: translateX(100%);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: rem;
+}
+
+.ellipse {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.9;
+  mix-blend-mode: screen;
+}
+
+.jaune {
+  background: #e0e033;
+  opacity: 400;
+  width: 260px;
+  height: 260px;
+}
+.orange {
+  background: #ffa500;
+  margin-left: -50px;
+  width: 260px;
+  height: 260px;
+}
+.red {
+  background: hsl(0, 100%, 50%);
+  margin-left: -80px;
+  width: 260px;
+  height: 260px;
+}
+.blue {
+  background: blue;
+  margin-left: -80px;
+  width: 260px;
+  height: 260px;
+}
+
+.texte-titre {
+  position: absolute;
+  top: 60%; /* Descendu de 50% à 60% pour éviter la navbar */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.light-mode .texte-titre {
+  color: #111;
+}
+
+.celia {
+  transform: translateX(-175px); /* Tu peux ajuster -10px, -30px… */
+  display: inline-block;
+  font-size: 5rem; /* ajuste selon le look que tu veux */
+  font-weight: bold;
+  margin-top: 5rem; /* ← c’est ça qui descend le texte */
+}
+
+.bonjour {
+  transform: translateX(-205px);
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.metier {
+  font-size: 4rem;
+  font-weight: 400;
+  transform: translateY(-140px);
+}
+.metier2 {
+  transform: translateX(-390px);
+  margin-top: -13rem;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-left: 186px;
+  font-weight: normal;
+}
+
+.bouton-cv {
+  position: absolute;
+  top: 94%;
+  left: 900px; /* ← Ajuste ici jusqu’à ce que ça te plaise */
+  z-index: 3;
+}
+
+.bouton-cv a {
+  text-decoration: none;
+  background-color: #3b3b3b;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  text-align: center;
+}
+
+.bouton-cv a:hover {
+  background-color: #5a5a5a;
+  transform: scale(1.05);
+}
+
+.light-mode .bouton-cv a {
+  background-color: #ffffff;
+  color: #111111;
+  padding: 0.8rem 1.8rem;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.light-mode .bouton-cv a:hover {
+  background-color: #f1f1f1;
+  color: #000000;
+}
+
+.social-icons {
+  position: absolute;
+  top: 94%;
+  left: 1140px; /* ← Essaie cette valeur pour voir */
+  display: flex;
+  gap: 1.5rem;
+  z-index: 3;
+}
+
+.icon-btn {
+  background-color: #3b3b3b;
+  padding: 0.6rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(1.1);
+}
+
+.icon-btn:hover {
+  background-color: #5a5a5a;
+  transform: scale(1.1);
+}
+
+.light-mode .icon-btn {
+  background-color: #ffffff;
+}
+
+.light-mode .icon-btn:hover {
+  background-color: #ffffff;
+}
+
+.light-mode .icon-btn img {
+  filter: brightness(0) saturate(100%);
+}
+.ellipse-container {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  margin-top: 8rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0; /* Ajoute cette ligne ou réduis la valeur si déjà présente */
+}
+
+.apropos-wrapper {
+  position: relative;
+  z-index: 2;
+  max
