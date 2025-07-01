@@ -1731,7 +1731,6 @@ input:checked + .slider:before {
   .ellipse-container .red {
     position: absolute !important;
     filter: blur(30px) !important;
-    opacity: 0.4 !important; /* Opacité réduite pour les deux modes */
   }
 
   .ellipse-container .blue {
@@ -1751,6 +1750,7 @@ input:checked + .slider:before {
   /* Styles spécifiques au mode clair */
   .light-mode .ellipse-container .blue,
   .light-mode .ellipse-container .red {
+    opacity: 0.7 !important;
     mix-blend-mode: normal !important;
   }
 
@@ -1760,5 +1760,114 @@ input:checked + .slider:before {
 
   .light-mode .ellipse-container .red {
     background: #ff4d4d !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dark-mode .ellipse-container .blue,
+  .dark-mode .ellipse-container .red {
+    opacity: 0.2 !important; /* Opacité encore plus réduite en mode sombre */
+    filter: blur(30px) !important;
+  }
+
+  .ellipse-container .blue {
+    width: 180px !important;
+    height: 180px !important;
+    left: 25% !important;
+    top: 70% !important;
+  }
+
+  .ellipse-container .red {
+    width: 170px !important;
+    height: 170px !important;
+    right: 5% !important;
+    top: 70% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .light-mode .container {
+    position: relative;
+    overflow: visible;
+  }
+
+  .light-mode .container .ellipse {
+    opacity: 0.4 !important;
+    mix-blend-mode: normal !important;
+    filter: blur(30px) !important;
+    position: absolute !important;
+    top: 20% !important;
+  }
+
+  .light-mode .container .jaune {
+    background: #ffd700 !important;
+    width: 180px !important;
+    height: 180px !important;
+    z-index: 1;
+    left: 28% !important;
+  }
+
+  .light-mode .container .orange {
+    background: #ff8c00 !important;
+    width: 180px !important;
+    height: 180px !important;
+    z-index: 2;
+    left: 38% !important;
+  }
+
+  .light-mode .container .red {
+    background: #ff4d4d !important;
+    width: 180px !important;
+    height: 180px !important;
+    z-index: 3;
+    right: 38% !important;
+  }
+
+  .light-mode .container .blue {
+    background: #4169e1 !important;
+    width: 180px !important;
+    height: 180px !important;
+    z-index: 4;
+    right: 20% !important;
+  }
+
+  /* Ajout des ellipses pour la section À propos */
+  .light-mode .ellipse-container .ellipse {
+    opacity: 0.4 !important;
+    mix-blend-mode: normal !important;
+    filter: blur(30px) !important;
+    position: absolute !important;
+  }
+
+  .light-mode .ellipse-container .jaune {
+    background: #ffd700 !important;
+    width: 170px !important;
+    height: 170px !important;
+    left: 10% !important;
+    top: 70% !important;
+  }
+
+  .light-mode .ellipse-container .orange {
+    background: #ff8c00 !important;
+    width: 170px !important;
+    height: 170px !important;
+    left: 30% !important;
+    top: 70% !important;
+  }
+
+  .light-mode .ellipse-container .red {
+    background: #ff4d4d !important;
+    width: 170px !important;
+    height: 170px !important;
+    right: 30% !important;
+    top: 70% !important;
+  }
+
+  .light-mode .ellipse-container .blue {
+    background: #4169e1 !important;
+    width: 170px !important;
+    height: 170px !important;
+    right: 10% !important;
+    top: 70% !important;
   }
 }
