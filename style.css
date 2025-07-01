@@ -401,7 +401,7 @@ input:checked + .slider:before {
 .ellipse-container .blue {
   background: rgba(0, 0, 255, 0.473);
   width: 500px;
-  height: 500px; /* Hauteur égale à la largeur pour un cercle parfait */
+  height: 350px;
   position: absolute;
   top: 50%;
   left: 28%; /* rapproché mais moins collé qu'avant */
@@ -411,7 +411,7 @@ input:checked + .slider:before {
 .ellipse-container .red {
   background: rgba(255, 0, 0, 0.404);
   width: 500px;
-  height: 500px; /* Hauteur égale à la largeur pour un cercle parfait */
+  height: 350px;
   position: absolute;
   top: 50%;
   right: 28%; /* rapproché mais moins collé qu'avant */
@@ -920,114 +920,9 @@ input:checked + .slider:before {
 .light-mode .orange,
 .light-mode .red,
 .light-mode .blue {
-  width: 320px;
-  height: 320px;
+  width: 300px;
+  height: 300px;
 }
-
-/* Desktop : toutes les ellipses du fond, mode sombre et clair, même taille */
-.jaune,
-.orange,
-.red,
-.blue {
-  width: 320px;
-  height: 320px;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 120px; /* ajuste selon la hauteur de ta navbar */
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  background: #111;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: background 0.4s, color 0.4s;
-}
-body {
-  padding-top: 110px; /* ajuste selon la hauteur exacte de ta navbar */
-}
-
-.dark-mode {
-  background: #1e1e1e;
-  color: white;
-}
-
-.light-mode {
-  background: #d9d9df;
-  color: #e4dede;
-}
-
-.aura-sass {
-  position: absolute;
-  width: 550px;
-  height: 550px;
-  border-radius: 50%;
-  background: radial-gradient(circle, red 10%, orange 60%, yellow 70%);
-  filter: blur(50px);
-  z-index: 0;
-  top: 38%;
-  left: 25%;
-  transform: translate(-50%, -100%) scale(0.45);
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-.navbar {
-  position: fixed;
-  top: 40px; /* descendu de 20px à 40px */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  width: 50%;
-  max-width: 1100px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 1rem 2rem;
-  background: #2c2c2c;
-  border-radius: 25px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-
-  transition: top 0.3s ease, opacity 0.3s ease;
-}
-
-.nav-group {
-  display: flex;
-  align-items: center;
-  gap: 5em; /* espace entre les liens et le switch */
-}
-
-.navbar.hide {
-  top: -100px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.frontend-section {
-  position: relative;
-  margin-top: 2rem; /* Remonté de 6rem à 2rem */
-  text-align: center;
-}
-
-.light-mode .navbar {
-  background: #ffffff;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 9rem;
-  margin: 0;
-  padding: 0;
-}
-
 .nav-links li a {
   text-decoration: none;
   color: white;
@@ -1035,1686 +930,835 @@ body {
   font-weight: bold;
   font-size: 0.9rem;
   position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover animation */
+.nav-links li a:hover {
+  transform: scale(1.1);
+}
+
+/* Quand le lien est actif = ombre noire en bas */
+.nav-links li.active a {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Mode clair */
 .light-mode .nav-links li a {
   color: black;
 }
 
-/*.nav-links li.active a::after {
+.light-mode .nav-links li.active a {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* lien actif en mode clair */
+.light-mode .nav-links li.active a {
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* lien actif en mode sombre */
+.nav-links li.active a {
+  box-shadow: 0 3px 0 rgba(255, 255, 255, 0.8);
+}
+
+.light-mode .project-card {
+  box-shadow: 0 10px 70px 0 rgb(0, 0, 0);
+}
+
+.light-mode .frame img,
+.light-mode .project-media img {
+  filter: drop-shadow(0 2px 8px rgb(0, 0, 0));
+}
+
+/* Désactive l'ombre uniquement sur les logos LinkedIn, GitHub et email dans .frame et .project-media */
+.light-mode .frame img[src*="linkedin"],
+.light-mode .frame img[src*="github"],
+.light-mode .frame img[src*="gmail"],
+.light-mode .frame img[src*="email"],
+.light-mode .project-media img[src*="linkedin"],
+.light-mode .project-media img[src*="github"],
+.light-mode .project-media img[src*="gmail"],
+.light-mode .project-media img[src*="email"] {
+  filter: none;
+}
+
+.project-card.neon-green::before {
   content: "";
   position: absolute;
+  top: 50%;
   left: 50%;
-  bottom: -10px;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-} */
-
-.light-mode .nav-links li.active a::after {
-  background: black;
-}
-
-.switch {
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
-  margin-left: 1rem;
-  vertical-align: middle;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  --background: #4b4a4e;
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--background);
-  transition: 0.5s;
-  border-radius: 30px;
-}
-
-.slider:before {
-  content: "🟡";
-  position: absolute;
-  font-size: 1em;
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 50%;
-  left: 10%;
-  bottom: 15%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--background);
-  transition: 0.5s;
-}
-
-input:checked + .slider:before {
-  content: "🌑";
-  transform: translateX(100%);
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: rem;
-}
-
-.ellipse {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.9;
-  mix-blend-mode: screen;
-}
-
-.jaune {
-  background: #e0e033;
-  opacity: 400;
-  width: 260px;
-  height: 260px;
-}
-.orange {
-  background: #ffa500;
-  margin-left: -50px;
-  width: 260px;
-  height: 260px;
-}
-.red {
-  background: hsl(0, 100%, 50%);
-  margin-left: -80px;
-  width: 260px;
-  height: 260px;
-}
-.blue {
-  background: blue;
-  margin-left: -80px;
-  width: 260px;
-  height: 260px;
-}
-
-.texte-titre {
-  position: absolute;
-  top: 60%; /* Descendu de 50% à 60% pour éviter la navbar */
-  left: 50%;
+  width: 90%;
+  height: 90%;
   transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 2;
-}
-
-.light-mode .texte-titre {
-  color: #111;
-}
-
-.celia {
-  transform: translateX(-175px); /* Tu peux ajuster -10px, -30px… */
-  display: inline-block;
-  font-size: 5rem; /* ajuste selon le look que tu veux */
-  font-weight: bold;
-  margin-top: 5rem; /* ← c’est ça qui descend le texte */
-}
-
-.bonjour {
-  transform: translateX(-205px);
-  display: inline-block;
-  font-size: 3rem;
-  font-weight: 500;
-}
-
-.metier {
-  font-size: 4rem;
-  font-weight: 400;
-  transform: translateY(-140px);
-}
-.metier2 {
-  transform: translateX(-390px);
-  margin-top: -13rem;
-  font-size: 4rem;
-  font-weight: bold;
-  margin-left: 186px;
-  font-weight: normal;
-}
-
-.bouton-cv {
-  position: absolute;
-  top: 94%;
-  left: 900px; /* ← Ajuste ici jusqu’à ce que ça te plaise */
-  z-index: 3;
-}
-
-.bouton-cv a {
-  text-decoration: none;
-  background-color: #3b3b3b;
-  color: white;
-  padding: 0.8rem 1.8rem;
   border-radius: 30px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  display: inline-block;
-  text-align: center;
-}
-
-.bouton-cv a:hover {
-  background-color: #5a5a5a;
-  transform: scale(1.05);
-}
-
-.light-mode .bouton-cv a {
-  background-color: #ffffff;
-  color: #111111;
-  padding: 0.8rem 1.8rem;
-  white-space: nowrap;
-  text-align: center;
-  display: inline-block;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: none;
-}
-
-.light-mode .bouton-cv a:hover {
-  background-color: #f1f1f1;
-  color: #000000;
-}
-
-.social-icons {
-  position: absolute;
-  top: 94%;
-  left: 1140px; /* ← Essaie cette valeur pour voir */
-  display: flex;
-  gap: 1.5rem;
-  z-index: 3;
-}
-
-.icon-btn {
-  background-color: #3b3b3b;
-  padding: 0.6rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, background-color 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.icon-btn img {
-  width: 24px;
-  height: 24px;
-  filter: brightness(1.1);
-}
-
-.icon-btn:hover {
-  background-color: #5a5a5a;
-  transform: scale(1.1);
-}
-
-.light-mode .icon-btn {
-  background-color: #ffffff;
-}
-
-.light-mode .icon-btn:hover {
-  background-color: #ffffff;
-}
-
-.light-mode .icon-btn img {
-  filter: brightness(0) saturate(100%);
-}
-.ellipse-container {
-  position: relative;
-  width: 100%;
-  min-height: 500px;
-  margin-top: 8rem;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0; /* Ajoute cette ligne ou réduis la valeur si déjà présente */
-}
-
-.apropos-wrapper {
-  position: relative;
-  z-index: 2;
-  max-width: 1100px;
-  width: 100%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.ellipse-container .ellipse {
-  position: absolute;
-  width: 600px;
-  height: 150px;
-  filter: blur(100px);
-  mix-blend-mode: screen;
+  background: radial-gradient(
+    circle,
+    #6eeb0869 0%,
+    #3b7d1c81 60%,
+    transparent 100%
+  );
+  filter: blur(32px);
+  opacity: 0.45;
   z-index: 1;
+  pointer-events: none;
 }
-
-.light-mode .ellipse {
-  mix-blend-mode: normal;
-  opacity: 0, 1;
-}
-
-.light-mode .ellipse-container .red {
-  background: #ff1a1af6;
-  opacity: 0.7;
-  width: 500px;
-  height: 450px;
-  top: 50%; /* aligné comme le fond noir */
-}
-
-.light-mode .ellipse-container .blue {
-  background: #3434fff5;
-  opacity: 2;
-  width: 550px;
-  height: 450px;
-  top: 50%; /* aligné comme le fond noir */
-}
-
-.ellipse-container .blue {
-  background: rgba(0, 0, 255, 0.473);
-  width: 500px;
-  height: 500px; /* Hauteur égale à la largeur pour un cercle parfait */
-  position: absolute;
-  top: 50%;
-  left: 28%; /* rapproché mais moins collé qu'avant */
-  transform: translateY(-50%);
-}
-
-.ellipse-container .red {
-  background: rgba(255, 0, 0, 0.404);
-  width: 500px;
-  height: 500px; /* Hauteur égale à la largeur pour un cercle parfait */
-  position: absolute;
-  top: 50%;
-  right: 28%; /* rapproché mais moins collé qu'avant */
-  transform: translateY(-50%);
-  opacity: 9;
-}
-
-.titre-apropos {
+.project-card.neon-green > * {
   position: relative;
   z-index: 2;
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  margin-top: 8rem;
-  color: white;
 }
 
-.light-mode .titre-apropos {
-  color: #111;
-}
+/* ================================
+   RESPONSIVE DESIGN - MOBILE
+   ================================ */
 
-.apropos-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1100px;
-  width: 100%;
-  padding: 2rem;
-  flex-wrap: wrap;
-}
-
-.texte-gauche {
-  flex: 1;
-  color: white;
-  padding-right: 4rem;
-  transform: translateX(200px);
-  text-align: center;
-  margin-top: -4rem;
-}
-
-.light-mode .texte-gauche {
-  color: hsl(0, 0%, 7%);
-}
-
-.citation {
-  font-style: italic;
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-  color: white;
-}
-
-.light-mode .citation {
-  color: #111;
-}
-
-.texte-gauche h2 {
-  font-size: 2.5rem;
-  margin-bottom: 500rem;
-  margin-top: rem;
-}
-
-.texte-gauche p {
-  font-size: 1.2rem;
-  line-height: 1.7rem;
-}
-
-.image-droite {
-  flex: 1;
-  text-align: right;
-}
-
-.image-droite img {
-  width: 700px;
-  height: auto;
-  border-radius: 20px;
-  transform: translateX(40px);
-}
-
-.frontend-section {
-  margin-top: 6rem;
-  text-align: center;
-}
-
-.titre-frontend {
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 4rem; /* Réduit de 8rem à 4rem */
-  margin-top: -6rem; /* Remonté de -10rem à -6rem */
-  text-align: center;
-}
-
-.light-mode .titre-frontend {
-  color: #111;
-}
-
-.frames-grid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  justify-items: center;
-  align-items: center;
-  max-width: 1100px; /* Augmenté de 900px à 1100px pour avoir plus d'espace */
-  margin: 0 auto;
-  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage */
-}
-
-.frame {
-  width: 180px;
-  height: 180px;
-  background: transparent;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  animation: float 2s ease-in-out infinite;
-  transition: transform 0.3s ease;
-}
-
-.frame img {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-}
-
-.frame-label {
-  position: absolute;
-  bottom: 10px;
-  font-size: 0.9rem;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 0.2rem 0.8rem;
-  border-radius: 12px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.light-mode .frame-label {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #111;
-}
-
-.frame:hover .frame-label {
-  opacity: 1;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.backend-section {
-  margin-top: 8rem;
-  text-align: center;
-  position: relative;
-}
-
-.titre-backend {
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 9rem;
-}
-
-.light-mode .titre-backend {
-  color: #111;
-}
-
-/* Correction : remonter le titre Backend / BDD sur mobile */
+/* Media queries pour téléphones (max-width: 768px) */
 @media (max-width: 768px) {
-  .titre-backend {
-    margin-top: -2rem !important;
-    margin-bottom: 4rem !important;
+  /* Body et conteneur principal */
+  body {
+    padding-top: 70px;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-padding-top: 70px;
+  }
+
+  /* Navbar mobile - centrée et compacte */
+  .navbar {
+    width: 98%; /* Maximiser la largeur disponible */
+    max-width: none;
+    padding: 0.4rem 0.8rem; /* Réduire le padding pour plus d'espace */
+    top: 35px; /* descendu de 15px à 35px */
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nav-group {
+    flex-direction: row; /* Horizontal pour mettre les liens et le switch sur la même ligne */
+    justify-content: flex-start; /* Aligner tous les éléments vers la gauche */
+    width: 100%;
+    align-items: center;
+    flex-wrap: nowrap; /* Empêcher le retour à la ligne */
+    gap: 0.6rem; /* Même espacement uniforme pour tous les éléments */
+    padding: 0 0.3rem; /* Padding réduit pour plus d'espace interne */
+  }
+
+  .nav-links {
+    gap: 0.6rem; /* Même espacement que le groupe principal */
+    flex-wrap: nowrap; /* Empêcher le retour à la ligne des liens */
+    justify-content: flex-start; /* Aligner les liens à gauche */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex: none; /* Ne pas étendre, laisser le gap naturel faire son travail */
+    overflow: visible; /* Permettre l'affichage complet du texte */
+    min-width: 0; /* Permettre la réduction si nécessaire */
+  }
+
+  .switch {
+    margin-left: 0; /* Supprimer la marge spéciale */
+    margin-right: 0; /* Supprimer la marge spéciale */
+    flex-shrink: 0; /* Empêcher la réduction du switch */
+    transform: scale(0.8); /* Réduire légèrement la taille du switch */
+  }
+
+  .nav-links li a {
+    font-size: 0.75rem; /* Légèrement augmenté pour plus de lisibilité */
+    white-space: nowrap; /* Empêcher le retour à la ligne du texte */
+    overflow: visible; /* Permettre l'affichage complet */
+    text-overflow: clip; /* Pas de points de suspension */
+  }
+
+  /* Container principal - layout centré */
+  .container {
+    position: relative;
+    height: auto;
+    min-height: 400px;
+    margin: 2rem 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Ellipses - ensemble centré sur mobile */
+  .ellipse {
+    position: absolute !important;
+    filter: blur(60px) !important;
+    opacity: 1 !important; /* Opacité au maximum */
+    mix-blend-mode: screen !important;
+  }
+
+  .jaune {
+    width: 80px !important;
+    height: 80px !important;
+    top: 32%;
+    left: 50%;
+    transform: translateX(-140px) !important;
+    margin-left: 0 !important;
+    background: #e0e033 !important;
+  }
+
+  .orange {
+    width: 85px !important;
+    height: 85px !important;
+    top: 32%;
+    left: 50%;
+    transform: translateX(-70px) !important;
+    margin-left: 0 !important;
+    background: #ffa500 !important;
+  }
+
+  .red {
+    width: 90px !important;
+    height: 90px !important;
+    top: 32%;
+    left: 50%;
+    transform: translateX(0px) !important;
+    margin-left: 0 !important;
+    background: hsl(0, 100%, 50%) !important;
+  }
+
+  .blue {
+    width: 95px !important;
+    height: 95px !important;
+    top: 32%;
+    left: 50%;
+    transform: translateX(70px) !important;
+    margin-left: 0 !important;
+    background: blue !important;
+  }
+
+  /* Textes titre - parfaitement centrés et descendus */
+  .texte-titre {
+    position: relative;
+    text-align: center;
+    margin: 4rem 0 5rem 0; /* Augmenté de 2rem à 4rem pour descendre encore plus */
+    z-index: 10;
+    width: 100%;
+    padding-top: 1rem; /* Augmenté de 0.5rem à 1rem */
+  }
+
+  .bonjour {
+    font-size: 2rem; /* Augmenté de 1.6rem à 2rem */
+    margin: 0 0 0.5rem 0;
+    transform: none !important;
+  }
+
+  .celia {
+    font-size: 2.8rem; /* Augmenté de 2.2rem à 2.8rem */
+    margin: 0.5rem 0;
+    transform: none !important;
+  }
+
+  .metier,
+  .metier2 {
+    font-size: 1.6rem; /* Augmenté de 1.4rem à 1.6rem */
+    margin: 0.3rem 0;
+    transform: none !important;
+  }
+
+  /* Bouton CV - centré et plus petit sur mobile */
+  .bouton-cv {
+    position: relative;
+    top: auto;
+    left: auto; /* Centré */
+    margin: -8rem auto 1rem auto; /* Redescendu de -12rem à -8rem */
+    text-align: center; /* Centré sur mobile */
+    z-index: 10;
+    display: flex;
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Alignement vertical des éléments */
+    width: 100%;
+    flex-direction: column; /* Mettre le bouton CV au-dessus des icônes */
+    align-items: center; /* Centrer les éléments */
+    gap: 1rem; /* Espace entre le bouton CV et les icônes sociales */
+  }
+
+  .bouton-cv a {
+    padding: 0.6rem 1.2rem; /* Réduits de 0.8rem 1.6rem à 0.6rem 1.2rem */
+    font-size: 0.9rem; /* Réduits de 1rem à 0.9rem */
+    display: inline-block;
+    flex-shrink: 0; /* Empêcher la réduction du bouton */
+  }
+
+  /* Icônes sociales - centrées en dessous du bouton CV */
+  .social-icons {
+    position: static; /* Changer de relative à static pour qu'elles suivent le bouton CV */
+    top: auto;
+    left: auto;
+    margin: 0; /* Supprimer toutes les marges */
+    display: flex;
+    justify-content: center; /* Centrer les icônes */
+    z-index: 10;
+    gap: 0.8rem; /* Réduits de 1rem à 0.8rem */
+    flex-shrink: 0; /* Empêcher la réduction des icônes */
+  }
+
+  .icon-btn {
+    padding: 0.6rem; /* Réduits de 0.8rem à 0.6rem */
+    transform: scale(1); /* Réduits de 1.2 à 1 (taille normale) */
+  }
+
+  .icon-btn img {
+    width: 24px; /* Réduits de 28px à 24px */
+    height: 24px; /* Réduits de 28px à 24px */
+  }
+
+  /* Section À propos - alignement parfait */
+  .ellipse-container {
+    margin-top: -2rem; /* Remonté encore de 2rem à -2rem */
+    min-height: auto;
+    padding: 3rem 1rem; /* Réduits de 6rem à 3rem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .apropos-wrapper {
+    padding: 1rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .titre-apropos {
+    font-size: 2.2rem;
+    margin: -10rem 0 3rem 0; /* Remonté encore plus de -6rem à -10rem */
+    text-align: center;
+  }
+
+  .apropos-content {
+    flex-direction: column;
+    gap: 0rem; /* Réduits encore de 1rem à 0rem pour coller le texte au titre */
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    justify-content: center; /* Centrage vertical */
+    margin-top: -22rem; /* Remontée maximale de -16rem à -22rem */
+  }
+
+  .image-droite {
+    width: 100%;
+    text-align: center;
+    transform: none !important;
+    order: -1; /* Mettre la photo en premier */
+    display: flex;
+    justify-content: center; /* Centrage horizontal parfait */
+    align-items: center; /* Centrage vertical */
+    margin: 0 auto; /* Centrage supplémentaire du conteneur */
+  }
+
+  .image-droite img {
+    width: 450px; /* Encore plus imposante - agrandie de 400px à 450px */
+    height: 450px; /* Encore plus imposante - agrandie de 400px à 450px */
+    border-radius: 50%;
+    object-fit: cover; /* Pour garder les proportions */
+    margin: 16rem auto 0rem auto; /* Descendue encore plus de 12rem à 16rem */
+    display: block; /* S'assurer que l'image est un bloc */
+    position: relative; /* Positionnement relatif pour un meilleur contrôle */
+    left: 50%; /* Centrage horizontal forcé */
+    transform: translateX(-50%); /* Centrage parfait avec transform */
+    z-index: 2; /* S'assurer que l'image reste au-dessus des ellipses */
+  }
+
+  .texte-gauche {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    transform: none !important;
+    margin: 0;
+  }
+
+  .citation {
+    font-size: 1.4rem; /* Augmenté de 1.1rem à 1.4rem */
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .texte-gauche p {
+    font-size: 1.2rem; /* Augmenté de 0.95rem à 1.2rem */
+    line-height: 1.6;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  /* Ellipses dans à propos - repositionnement */
+  .ellipse-container .ellipse {
+    position: absolute;
+    z-index: 0; /* S'assurer qu'elles restent en arrière-plan */
+  }
+
+  .ellipse-container .blue {
+    width: 150px !important; /* Diminué de 170px à 150px */
+    height: 110px !important; /* Diminué de 130px à 110px */
+    top: 70%; /* Remonté de 75% à 70% */
+    right: -5%; /* Décalé encore plus vers la droite, sortant légèrement du cadre */
+  }
+
+  .ellipse-container .red {
+    width: 220px !important;
+    height: 160px !important;
+    top: 60%;
+    left: 5%;
+  }
+
+  /* Sections compétences - alignement centré */
+  .frontend-section,
+  .backend-section,
+  .outils-section {
+    margin-top: 4rem; /* Remonté encore plus de 8rem à 4rem pour frontend */
+    padding: 6rem 1rem; /* Augmenté de 4rem à 6rem */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titre-frontend,
+  .titre-backend,
+  .titre-outils {
+    font-size: 2.2rem;
+    margin-bottom: 6rem; /* Augmenté de 4rem à 6rem */
+    margin-top: 0.5rem; /* Remonté de 3rem à 0.5rem */
+    text-align: center;
+  }
+
+  /* Frontend section spécifiquement remontée encore plus sur mobile */
+  .frontend-section {
+    margin-top: -8rem !important; /* Encore plus remonté de -6rem à -8rem */
+  }
+
+  /* Grilles de compétences - tous les logos 3 par 3 */
+  .frames-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important; /* 3 colonnes pour tous les logos */
+    gap: 1.8rem 0.8rem; /* gap vertical augmenté à 1.8rem, horizontal à 0.8rem */
+    padding: 0;
+    max-width: 420px; /* Largeur augmentée de 380px à 420px pour accommoder les logos plus grands */
+    margin: 0 auto;
+    justify-items: center;
+    align-items: start;
+    margin-top: -2rem; /* Remonté de 2rem à -2rem pour remonter les logos */
+  }
+
+  .backend-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important; /* 3 colonnes pour backend aussi */
+    gap: 1.8rem 0.8rem; /* gap vertical augmenté à 1.8rem, horizontal à 0.8rem */
+    padding: 0;
+    max-width: 420px; /* Même largeur que frontend, augmentée à 420px */
+    margin: 0 auto;
+    justify-items: center;
+    align-items: start;
+  }
+
+  .frame {
+    padding: 1rem; /* Augmenté de 0.8rem à 1rem */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    width: 140px; /* Augmenté de 120px à 140px pour plus d'espace */
+    height: 140px; /* Augmenté de 120px à 140px pour plus d'espace */
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .frame img {
+    width: 95px; /* Augmenté de 80px à 95px pour plus de visibilité */
+    height: 95px; /* Augmenté de 80px à 95px pour plus de visibilité */
+    margin-bottom: 0.4rem; /* Augmenté de 0.3rem à 0.4rem */
+  }
+
+  .frame-label {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  /* Section outils - layout spécial mobile avec icônes agrandies et alignées */
+  .outils-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 2.8rem; /* Augmenté de 2.5rem à 2.8rem */
+    max-width: 420px; /* Agrandi de 380px à 420px pour accommoder 3 colonnes et logos plus grands */
+    margin: 0 auto;
+  }
+
+  .ligne-haut {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important; /* 3 colonnes au lieu de 2 */
+    gap: 1.8rem 0.8rem; /* gap vertical augmenté à 1.8rem, horizontal à 0.8rem */
+    justify-items: center;
+    align-items: start;
+    width: 100%;
+  }
+
+  .ligne-bas {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important; /* 3 colonnes au lieu de 2 */
+    gap: 1.8rem 0.8rem; /* gap vertical augmenté à 1.8rem, horizontal à 0.8rem */
+    justify-items: center;
+    align-items: start;
+    width: 100%;
+  }
+
+  /* Section projets - cards parfaitement alignées verticalement */
+  .cards-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 6rem; /* Augmenté de 4rem à 6rem */
+    padding: 6rem 1rem; /* Augmenté de 4rem à 6rem */
+    max-width: 350px;
+    margin: 12rem auto; /* Augmenté de 8rem à 12rem */
+    justify-items: center;
+    align-items: start;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 300px; /* Réduits la largeur maximale */
+    margin: 0 auto; /* Centre la carte */
+    padding: 1rem; /* Réduits le padding */
+    transform: scale(0.9); /* Réduits légèrement la taille globale */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .project-media {
+    width: 100% !important;
+    height: 200px !important;
+    margin: 0 auto;
+    border-radius: 22px !important;
+  }
+
+  .project-info {
+    padding: 1rem; /* Réduits le padding interne */
+  }
+
+  .project-info h3 {
+    font-size: 1.2rem; /* Réduits de 1.4rem à 1.2rem */
+    margin: 0 0 0.5rem;
+  }
+
+  .project-info p {
+    font-size: 0.9rem; /* Réduits de 1rem à 0.9rem */
+  }
+
+  /* Auras et effets - adaptation mobile */
+  .aura-sass,
+  .aura-backend,
+  .aura-outils {
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+
+  /* Corrections additionnelles pour les dimensions fixes sur mobile */
+  /* Forcer les dimensions responsive sur les project-media */
+  .project-media[style*="width: 260px"] {
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+
+  .project-media[style*="height: 254px"] {
+    height: 200px !important;
+  }
+
+  /* Correction pour les transform qui décalent les éléments */
+  .celia[style*="transform"] {
+    transform: none !important;
+  }
+
+  /* Correction pour les positionnements absolus problématiques */
+  .bouton-cv[style*="position: absolute"] {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  .social-icons[style*="position: absolute"] {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  /* Assurer que tous les éléments restent dans les limites de l'écran */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Éviter les débordements horizontaux */
+  .container,
+  .ellipse-container,
+  .frontend-section,
+  .backend-section,
+  .outils-section {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Forcer les project-cards en layout vertical sur mobile */
+  .project-card {
+    flex-direction: column !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .project-media {
+    flex: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .project-info {
+    width: 100% !important;
+    flex: none !important;
   }
 }
 
-.backend-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
-  justify-content: center;
-  max-width: 800px; /* Augmenté de 600px à 800px pour plus d'espace */
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage */
-}
-
-.aura-backend {
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ffffff 10%, #2e5cff 40%, #0b206e 70%);
-  filter: blur(35px);
-  z-index: 0;
-  top: 80%;
-  left: 64%;
-  transform: translate(-50%, -50%) scale(1);
-  pointer-events: none;
-}
-
-.outils-section {
-  margin-top: 8rem;
-  text-align: center;
-  position: relative;
-}
-
-.titre-outils {
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 5rem;
-}
-
-.light-mode .titre-outils {
-  color: #111;
-}
-
-.outils-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage des frames */
-  max-width: 1000px; /* Ajout d'une largeur max pour plus d'espace */
-  margin: 0 auto; /* Centrage du conteneur */
-}
-
-.ligne-haut {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-}
-
-.ligne-bas {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-}
-.aura-outils {
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #1a1919 25%, #ffffff 100%);
-  filter: blur(22px);
-  opacity: 0.7; /* ← augmente la valeur (exemple : 0.7 pour plus visible) */
-  z-index: 0;
-  top: 406%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-.outils-container {
-  position: relative;
-  z-index: 2;
-}
-
-/*.nav-links li.active a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -10px;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-} */
-
-.light-mode .jaune,
-.light-mode .orange,
-.light-mode .red,
-.light-mode .blue {
-  width: 320px;
-  height: 320px;
-}
-
-/* Desktop : toutes les ellipses du fond, mode sombre et clair, même taille */
-.jaune,
-.orange,
-.red,
-.blue {
-  width: 320px;
-  height: 320px;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 120px; /* ajuste selon la hauteur de ta navbar */
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  background: #111;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: background 0.4s, color 0.4s;
-}
-body {
-  padding-top: 110px; /* ajuste selon la hauteur exacte de ta navbar */
-}
-
-.dark-mode {
-  background: #1e1e1e;
-  color: white;
-}
-
-.light-mode {
-  background: #d9d9df;
-  color: #e4dede;
-}
-
-.aura-sass {
-  position: absolute;
-  width: 550px;
-  height: 550px;
-  border-radius: 50%;
-  background: radial-gradient(circle, red 10%, orange 60%, yellow 70%);
-  filter: blur(50px);
-  z-index: 0;
-  top: 38%;
-  left: 25%;
-  transform: translate(-50%, -100%) scale(0.45);
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-.navbar {
-  position: fixed;
-  top: 40px; /* descendu de 20px à 40px */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  width: 50%;
-  max-width: 1100px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 1rem 2rem;
-  background: #2c2c2c;
-  border-radius: 25px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-
-  transition: top 0.3s ease, opacity 0.3s ease;
-}
-
-.nav-group {
-  display: flex;
-  align-items: center;
-  gap: 5em; /* espace entre les liens et le switch */
-}
-
-.navbar.hide {
-  top: -100px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.frontend-section {
-  position: relative;
-  margin-top: 2rem; /* Remonté de 6rem à 2rem */
-  text-align: center;
-}
-
-.light-mode .navbar {
-  background: #ffffff;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 9rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 0.9rem;
-  position: relative;
-}
-
-.light-mode .nav-links li a {
-  color: black;
-}
-
-/*.nav-links li.active a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -10px;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-} */
-
-.light-mode .nav-links li.active a::after {
-  background: black;
-}
-
-.switch {
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
-  margin-left: 1rem;
-  vertical-align: middle;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  --background: #4b4a4e;
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--background);
-  transition: 0.5s;
-  border-radius: 30px;
-}
-
-.slider:before {
-  content: "🟡";
-  position: absolute;
-  font-size: 1em;
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 50%;
-  left: 10%;
-  bottom: 15%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--background);
-  transition: 0.5s;
-}
-
-input:checked + .slider:before {
-  content: "🌑";
-  transform: translateX(100%);
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: rem;
-}
-
-.ellipse {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.9;
-  mix-blend-mode: screen;
-}
-
-.jaune {
-  background: #e0e033;
-  opacity: 400;
-  width: 260px;
-  height: 260px;
-}
-.orange {
-  background: #ffa500;
-  margin-left: -50px;
-  width: 260px;
-  height: 260px;
-}
-.red {
-  background: hsl(0, 100%, 50%);
-  margin-left: -80px;
-  width: 260px;
-  height: 260px;
-}
-.blue {
-  background: blue;
-  margin-left: -80px;
-  width: 260px;
-  height: 260px;
-}
-
-.texte-titre {
-  position: absolute;
-  top: 60%; /* Descendu de 50% à 60% pour éviter la navbar */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 2;
-}
-
-.light-mode .texte-titre {
-  color: #111;
-}
-
-.celia {
-  transform: translateX(-175px); /* Tu peux ajuster -10px, -30px… */
-  display: inline-block;
-  font-size: 5rem; /* ajuste selon le look que tu veux */
-  font-weight: bold;
-  margin-top: 5rem; /* ← c’est ça qui descend le texte */
-}
-
-.bonjour {
-  transform: translateX(-205px);
-  display: inline-block;
-  font-size: 3rem;
-  font-weight: 500;
-}
-
-.metier {
-  font-size: 4rem;
-  font-weight: 400;
-  transform: translateY(-140px);
-}
-.metier2 {
-  transform: translateX(-390px);
-  margin-top: -13rem;
-  font-size: 4rem;
-  font-weight: bold;
-  margin-left: 186px;
-  font-weight: normal;
-}
-
-.bouton-cv {
-  position: absolute;
-  top: 94%;
-  left: 900px; /* ← Ajuste ici jusqu’à ce que ça te plaise */
-  z-index: 3;
-}
-
-.bouton-cv a {
-  text-decoration: none;
-  background-color: #3b3b3b;
-  color: white;
-  padding: 0.8rem 1.8rem;
-  border-radius: 30px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  display: inline-block;
-  text-align: center;
-}
-
-.bouton-cv a:hover {
-  background-color: #5a5a5a;
-  transform: scale(1.05);
-}
-
-.light-mode .bouton-cv a {
-  background-color: #ffffff;
-  color: #111111;
-  padding: 0.8rem 1.8rem;
-  white-space: nowrap;
-  text-align: center;
-  display: inline-block;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: none;
-}
-
-.light-mode .bouton-cv a:hover {
-  background-color: #f1f1f1;
-  color: #000000;
-}
-
-.social-icons {
-  position: absolute;
-  top: 94%;
-  left: 1140px; /* ← Essaie cette valeur pour voir */
-  display: flex;
-  gap: 1.5rem;
-  z-index: 3;
-}
-
-.icon-btn {
-  background-color: #3b3b3b;
-  padding: 0.6rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, background-color 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.icon-btn img {
-  width: 24px;
-  height: 24px;
-  filter: brightness(1.1);
-}
-
-.icon-btn:hover {
-  background-color: #5a5a5a;
-  transform: scale(1.1);
-}
-
-.light-mode .icon-btn {
-  background-color: #ffffff;
-}
-
-.light-mode .icon-btn:hover {
-  background-color: #ffffff;
-}
-
-.light-mode .icon-btn img {
-  filter: brightness(0) saturate(100%);
-}
-.ellipse-container {
-  position: relative;
-  width: 100%;
-  min-height: 500px;
-  margin-top: 8rem;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0; /* Ajoute cette ligne ou réduis la valeur si déjà présente */
-}
-
-.apropos-wrapper {
-  position: relative;
-  z-index: 2;
-  max-width: 1100px;
-  width: 100%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.ellipse-container .ellipse {
-  position: absolute;
-  width: 600px;
-  height: 150px;
-  filter: blur(100px);
-  mix-blend-mode: screen;
-  z-index: 1;
-}
-
-.light-mode .ellipse {
-  mix-blend-mode: normal;
-  opacity: 0, 1;
-}
-
-.light-mode .ellipse-container .red {
-  background: #ff1a1af6;
-  opacity: 0.7;
-  width: 500px;
-  height: 450px;
-  top: 50%; /* aligné comme le fond noir */
-}
-
-.light-mode .ellipse-container .blue {
-  background: #3434fff5;
-  opacity: 2;
-  width: 550px;
-  height: 450px;
-  top: 50%; /* aligné comme le fond noir */
-}
-
-.ellipse-container .blue {
-  background: rgba(0, 0, 255, 0.473);
-  width: 500px;
-  height: 500px; /* Hauteur égale à la largeur pour un cercle parfait */
-  position: absolute;
-  top: 50%;
-  left: 28%; /* rapproché mais moins collé qu'avant */
-  transform: translateY(-50%);
-}
-
-.ellipse-container .red {
-  background: rgba(255, 0, 0, 0.404);
-  width: 500px;
-  height: 500px; /* Hauteur égale à la largeur pour un cercle parfait */
-  position: absolute;
-  top: 50%;
-  right: 28%; /* rapproché mais moins collé qu'avant */
-  transform: translateY(-50%);
-  opacity: 9;
-}
-
-.titre-apropos {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  margin-top: 8rem;
-  color: white;
-}
-
-.light-mode .titre-apropos {
-  color: #111;
-}
-
-.apropos-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1100px;
-  width: 100%;
-  padding: 2rem;
-  flex-wrap: wrap;
-}
-
-.texte-gauche {
-  flex: 1;
-  color: white;
-  padding-right: 4rem;
-  transform: translateX(200px);
-  text-align: center;
-  margin-top: -4rem;
-}
-
-.light-mode .texte-gauche {
-  color: hsl(0, 0%, 7%);
-}
-
-.citation {
-  font-style: italic;
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-  color: white;
-}
-
-.light-mode .citation {
-  color: #111;
-}
-
-.texte-gauche h2 {
-  font-size: 2.5rem;
-  margin-bottom: 500rem;
-  margin-top: rem;
-}
-
-.texte-gauche p {
-  font-size: 1.2rem;
-  line-height: 1.7rem;
-}
-
-.image-droite {
-  flex: 1;
-  text-align: right;
-}
-
-.image-droite img {
-  width: 700px;
-  height: auto;
-  border-radius: 20px;
-  transform: translateX(40px);
-}
-
-.frontend-section {
-  margin-top: 6rem;
-  text-align: center;
-}
-
-.titre-frontend {
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 4rem; /* Réduit de 8rem à 4rem */
-  margin-top: -6rem; /* Remonté de -10rem à -6rem */
-  text-align: center;
-}
-
-.light-mode .titre-frontend {
-  color: #111;
-}
-
-.frames-grid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  justify-items: center;
-  align-items: center;
-  max-width: 1100px; /* Augmenté de 900px à 1100px pour avoir plus d'espace */
-  margin: 0 auto;
-  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage */
-}
-
-.frame {
-  width: 180px;
-  height: 180px;
-  background: transparent;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  animation: float 2s ease-in-out infinite;
-  transition: transform 0.3s ease;
-}
-
-.frame img {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-}
-
-.frame-label {
-  position: absolute;
-  bottom: 10px;
-  font-size: 0.9rem;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 0.2rem 0.8rem;
-  border-radius: 12px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.light-mode .frame-label {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #111;
-}
-
-.frame:hover .frame-label {
-  opacity: 1;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
+/* Media queries pour très petits écrans (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Navbar ultra-compacte */
+  .navbar {
+    width: 99%; /* Maximiser l'espace */
+    padding: 0.3rem 0.5rem; /* Padding minimal */
   }
-  50% {
-    transform: translateY(-30px);
+
+  .nav-links {
+    gap: 0.6rem; /* Espace plus rapproché entre les liens */
   }
-  100% {
-    transform: translateY(0px);
+
+  .nav-links li a {
+    font-size: 0.7rem; /* Taille légèrement plus grande */
+    overflow: visible; /* Permettre l'affichage complet */
+  }
+
+  .switch {
+    margin-left: 0; /* Pas de marge sur très petits écrans */
+    transform: scale(0.7); /* Réduire encore plus le switch */
+  }
+
+  .celia {
+    font-size: 2.4rem; /* Augmenté de 1.9rem à 2.4rem */
+  }
+
+  .metier,
+  .metier2 {
+    font-size: 1.2rem; /* Augmenté de 1rem à 1.2rem */
+  }
+
+  /* Grille compétences - tous les logos 3 par 3 sur très petits écrans aussi */
+  .frames-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important; /* 3 colonnes pour tous les logos */
+    gap: 1.2rem 0.4rem; /* gap encore plus réduit pour très petits écrans */
+    max-width: 350px; /* Largeur adaptée pour 3 colonnes sur petits écrans */
+    margin: 0 auto;
+    justify-items: center;
+    align-items: start;
+    margin-top: -2rem; /* Remonté de 2rem à -2rem pour remonter les logos */
+  }
+
+  /* Le 3ème élément (JS) prend toute la largeur en dessous - SUPPRIMÉ */
+  /* Maintenant tous les éléments sont disposés trois par trois */
+
+  .backend-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important; /* 3 colonnes au lieu de 2 */
+    gap: 1.2rem 0.4rem; /* même gap que frontend */
+    max-width: 350px; /* même largeur que frontend */
+    margin: 0 auto;
+    justify-items: center;
+    align-items: start;
+  }
+
+  .frame {
+    width: 110px; /* Augmenté de 100px à 110px pour plus d'espace */
+    height: 110px; /* Augmenté de 100px à 110px pour plus d'espace */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .frame img {
+    width: 70px; /* Augmenté de 60px à 70px pour plus de visibilité */
+    height: 70px; /* Augmenté de 60px à 70px pour plus de visibilité */
+  }
+
+  /* Section outils en 3 colonnes comme les autres compétences */
+  .ligne-haut,
+  .ligne-bas {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important; /* 3 colonnes au lieu de 2 */
+    gap: 1.2rem 0.4rem; /* même gap que frontend et backend */
+    justify-items: center;
+    align-items: start;
+    width: 100%;
+  }
+
+  .outils-container {
+    max-width: 350px; /* même largeur que les autres sections */
+    margin: 0 auto;
+  }
+
+  /* Cards projets encore plus compactes et parfaitement alignées */
+  .project-card {
+    max-width: 250px; /* Réduits encore plus la largeur maximale */
+    margin: 0 auto;
+    padding: 0.8rem; /* Réduits encore le padding */
+    transform: scale(0.8); /* Réduit plus la taille globale */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    margin-top: -5rem !important; /* Réduit la marge négative pour descendre les cartes */
+  }
+
+  .cards-grid {
+    margin-top: -6rem !important; /* Réduit la marge négative de la grille */
+  }
+
+  .project-media {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .project-media img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .project-info {
+    padding: 0.8rem;
+  }
+
+  .project-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .project-info p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  /* Ajuste l'espacement entre les cartes */
+  .project-card + .project-card {
+    margin-top: -2rem !important; /* Réduit la marge négative entre les cartes */
   }
 }
 
-.backend-section {
-  margin-top: 8rem;
-  text-align: center;
-  position: relative;
-}
+/* Remonter la section Backend/BDD sur mobile */
+@media (max-width: 480px) {
+  .backend-section {
+    margin-top: -8rem; /* Remonte encore plus la section pour les écrans mobiles */
+  }
 
-.titre-backend {
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 9rem;
-}
+  .backend-grid {
+    display: grid !important; /* Force l'utilisation de la grille */
+    grid-template-columns: repeat(2, 1fr) !important; /* Affiche les logos deux par deux */
+    gap: 2rem !important; /* Ajuste l'espacement entre les éléments */
+    justify-content: center !important; /* Centre les éléments */
+    align-items: center !important; /* Aligne les éléments verticalement */
+  }
 
-.light-mode .titre-backend {
-  color: #111;
-}
-
-/* Correction : remonter le titre Backend / BDD sur mobile */
-@media (max-width: 768px) {
-  .titre-backend {
-    margin-top: -2rem !important;
-    margin-bottom: 4rem !important;
+  .outils-section {
+    margin-top: -4rem; /* Remonte la section pour les écrans mobiles */
   }
 }
 
-.backend-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
-  justify-content: center;
-  max-width: 800px; /* Augmenté de 600px à 800px pour plus d'espace */
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage */
+@media (max-width: 480px) {
+  .outils-container {
+    padding-left: 0; /* Supprime le padding qui décale sur mobile */
+    margin: 0 auto; /* Centre le conteneur */
+    width: 100%; /* Utilise toute la largeur disponible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Réduit l'espacement vertical entre les lignes */
+  }
+  
+  .ligne-haut,
+  .ligne-bas {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Réduit l'espacement horizontal entre les icônes */
+  }
+
+  .ligne-bas {
+    padding: 0 3rem; /* Ajuste la position des deux logos du bas */
+    justify-content: space-around; /* Répartit l'espace entre les deux logos */
+  }
 }
 
-.aura-backend {
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ffffff 10%, #2e5cff 40%, #0b206e 70%);
-  filter: blur(35px);
-  z-index: 0;
-  top: 80%;
-  left: 64%;
-  transform: translate(-50%, -50%) scale(1);
-  pointer-events: none;
+@media (max-width: 480px) {
+  .aura-outils {
+    top: 300% !important; /* Descend un petit peu plus l'ellipse noire */
+    transform: translate(-50%, -50%) scale(0.8);
+  }
 }
 
-.outils-section {
-  margin-top: 8rem;
-  text-align: center;
-  position: relative;
+@media (max-width: 480px) {
+  .aura-backend {
+    width: 150px; /* Réduit encore plus la largeur */
+    height: 150px; /* Réduit encore plus la hauteur */
+    filter: blur(25px); /* Réduit le flou */
+    transform: translate(-50%, -50%) scale(0.9); /* Réduit légèrement la taille */
+  }
 }
 
-.titre-outils {
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 5rem;
+@media (max-width: 480px) {
+  .aura-sass {
+    width: 150px; /* Même largeur que l'ellipse bleue */
+    height: 150px; /* Même hauteur que l'ellipse bleue */
+    filter: blur(25px); /* Même flou que l'ellipse bleue */
+    transform: translate(-50%, -100%) scale(0.9); /* Même scale que l'ellipse bleue */
+  }
 }
 
-.light-mode .titre-outils {
-  color: #111;
-}
+@media (max-width: 480px) {
+  .ellipse-container .blue,
+  .ellipse-container .red {
+    position: absolute !important;
+    filter: blur(30px) !important;
+    opacity: 0.4 !important; /* Opacité réduite pour les deux modes */
+  }
 
-.outils-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  padding-left: 6rem; /* Ajout d'un padding pour compenser le décalage des frames */
-  max-width: 1000px; /* Ajout d'une largeur max pour plus d'espace */
-  margin: 0 auto; /* Centrage du conteneur */
-}
+  .ellipse-container .blue {
+    width: 180px !important;
+    height: 180px !important;
+    left: 25% !important;
+    top: 70% !important;
+  }
 
-.ligne-haut {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-}
+  .ellipse-container .red {
+    width: 170px !important;
+    height: 170px !important;
+    right: 5% !important;
+    top: 70% !important;
+  }
 
-.ligne-bas {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-}
-.aura-outils {
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #1a1919 25%, #ffffff 100%);
-  filter: blur(22px);
-  opacity: 0.7; /* ← augmente la valeur (exemple : 0.7 pour plus visible) */
-  z-index: 0;
-  top: 406%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-.outils-container {
-  position: relative;
-  z-index: 2;
-}
+  /* Styles spécifiques au mode clair */
+  .light-mode .ellipse-container .blue,
+  .light-mode .ellipse-container .red {
+    mix-blend-mode: normal !important;
+  }
 
-/*.nav-links li.active a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -10px;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-} */
+  .light-mode .ellipse-container .blue {
+    background: #4169e1 !important;
+  }
 
-.light-mode .jaune,
-.light-mode .orange,
-.light-mode .red,
-.light-mode .blue {
-  width: 320px;
-  height: 320px;
+  .light-mode .ellipse-container .red {
+    background: #ff4d4d !important;
+  }
 }
-
-/* Desktop : toutes les ellipses du fond, mode sombre et clair, même taille */
-.jaune,
-.orange,
-.red,
-.blue {
-  width: 320px;
-  height: 320px;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 120px; /* ajuste selon la hauteur de ta navbar */
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  background: #111;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: background 0.4s, color 0.4s;
-}
-body {
-  padding-top: 110px; /* ajuste selon la hauteur exacte de ta navbar */
-}
-
-.dark-mode {
-  background: #1e1e1e;
-  color: white;
-}
-
-.light-mode {
-  background: #d9d9df;
-  color: #e4dede;
-}
-
-.aura-sass {
-  position: absolute;
-  width: 550px;
-  height: 550px;
-  border-radius: 50%;
-  background: radial-gradient(circle, red 10%, orange 60%, yellow 70%);
-  filter: blur(50px);
-  z-index: 0;
-  top: 38%;
-  left: 25%;
-  transform: translate(-50%, -100%) scale(0.45);
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-.navbar {
-  position: fixed;
-  top: 40px; /* descendu de 20px à 40px */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  width: 50%;
-  max-width: 1100px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 1rem 2rem;
-  background: #2c2c2c;
-  border-radius: 25px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-
-  transition: top 0.3s ease, opacity 0.3s ease;
-}
-
-.nav-group {
-  display: flex;
-  align-items: center;
-  gap: 5em; /* espace entre les liens et le switch */
-}
-
-.navbar.hide {
-  top: -100px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.frontend-section {
-  position: relative;
-  margin-top: 2rem; /* Remonté de 6rem à 2rem */
-  text-align: center;
-}
-
-.light-mode .navbar {
-  background: #ffffff;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 9rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 0.9rem;
-  position: relative;
-}
-
-.light-mode .nav-links li a {
-  color: black;
-}
-
-/*.nav-links li.active a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -10px;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-} */
-
-.light-mode .nav-links li.active a::after {
-  background: black;
-}
-
-.switch {
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
-  margin-left: 1rem;
-  vertical-align: middle;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  --background: #4b4a4e;
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--background);
-  transition: 0.5s;
-  border-radius: 30px;
-}
-
-.slider:before {
-  content: "🟡";
-  position: absolute;
-  font-size: 1em;
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 50%;
-  left: 10%;
-  bottom: 15%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--background);
-  transition: 0.5s;
-}
-
-input:checked + .slider:before {
-  content: "🌑";
-  transform: translateX(100%);
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: rem;
-}
-
-.ellipse {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.9;
-  mix-blend-mode: screen;
-}
-
-.jaune {
-  background: #e0e033;
-  opacity: 400;
-  width: 260px;
-  height: 260px;
-}
-.orange {
-  background: #ffa500;
-  margin-left: -50px;
-  width: 260px;
-  height: 260px;
-}
-.red {
-  background: hsl(0, 100%, 50%);
-  margin-left: -80px;
-  width: 260px;
-  height: 260px;
-}
-.blue {
-  background: blue;
-  margin-left: -80px;
-  width: 260px;
-  height: 260px;
-}
-
-.texte-titre {
-  position: absolute;
-  top: 60%; /* Descendu de 50% à 60% pour éviter la navbar */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 2;
-}
-
-.light-mode .texte-titre {
-  color: #111;
-}
-
-.celia {
-  transform: translateX(-175px); /* Tu peux ajuster -10px, -30px… */
-  display: inline-block;
-  font-size: 5rem; /* ajuste selon le look que tu veux */
-  font-weight: bold;
-  margin-top: 5rem; /* ← c’est ça qui descend le texte */
-}
-
-.bonjour {
-  transform: translateX(-205px);
-  display: inline-block;
-  font-size: 3rem;
-  font-weight: 500;
-}
-
-.metier {
-  font-size: 4rem;
-  font-weight: 400;
-  transform: translateY(-140px);
-}
-.metier2 {
-  transform: translateX(-390px);
-  margin-top: -13rem;
-  font-size: 4rem;
-  font-weight: bold;
-  margin-left: 186px;
-  font-weight: normal;
-}
-
-.bouton-cv {
-  position: absolute;
-  top: 94%;
-  left: 900px; /* ← Ajuste ici jusqu’à ce que ça te plaise */
-  z-index: 3;
-}
-
-.bouton-cv a {
-  text-decoration: none;
-  background-color: #3b3b3b;
-  color: white;
-  padding: 0.8rem 1.8rem;
-  border-radius: 30px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  display: inline-block;
-  text-align: center;
-}
-
-.bouton-cv a:hover {
-  background-color: #5a5a5a;
-  transform: scale(1.05);
-}
-
-.light-mode .bouton-cv a {
-  background-color: #ffffff;
-  color: #111111;
-  padding: 0.8rem 1.8rem;
-  white-space: nowrap;
-  text-align: center;
-  display: inline-block;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: none;
-}
-
-.light-mode .bouton-cv a:hover {
-  background-color: #f1f1f1;
-  color: #000000;
-}
-
-.social-icons {
-  position: absolute;
-  top: 94%;
-  left: 1140px; /* ← Essaie cette valeur pour voir */
-  display: flex;
-  gap: 1.5rem;
-  z-index: 3;
-}
-
-.icon-btn {
-  background-color: #3b3b3b;
-  padding: 0.6rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, background-color 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.icon-btn img {
-  width: 24px;
-  height: 24px;
-  filter: brightness(1.1);
-}
-
-.icon-btn:hover {
-  background-color: #5a5a5a;
-  transform: scale(1.1);
-}
-
-.light-mode .icon-btn {
-  background-color: #ffffff;
-}
-
-.light-mode .icon-btn:hover {
-  background-color: #ffffff;
-}
-
-.light-mode .icon-btn img {
-  filter: brightness(0) saturate(100%);
-}
-.ellipse-container {
-  position: relative;
-  width: 100%;
-  min-height: 500px;
-  margin-top: 8rem;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0; /* Ajoute cette ligne ou réduis la valeur si déjà présente */
-}
-
-.apropos-wrapper {
-  position: relative;
-  z-index: 2;
-  max
