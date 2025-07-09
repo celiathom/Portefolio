@@ -1015,61 +1015,19 @@ input:checked + .slider:before {
 
 /* Media queries pour téléphones (max-width: 768px) */
 @media (max-width: 768px) {
+  /* Masquer la navbar sur mobile */
+  .navbar {
+    display: none !important;
+  }
+
   /* Body et conteneur principal */
   body {
-    padding-top: 70px;
+    padding-top: 0; /* Supprime le padding-top car pas de navbar */
     overflow-x: hidden;
   }
 
   html {
-    scroll-padding-top: 70px;
-  }
-
-  /* Navbar mobile - centrée et compacte */
-  .navbar {
-    width: 98%; /* Maximiser la largeur disponible */
-    max-width: none;
-    padding: 0.4rem 0.8rem; /* Réduire le padding pour plus d'espace */
-    top: 35px; /* descendu de 15px à 35px */
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .nav-group {
-    flex-direction: row; /* Horizontal pour mettre les liens et le switch sur la même ligne */
-    justify-content: flex-start; /* Aligner tous les éléments vers la gauche */
-    width: 100%;
-    align-items: center;
-    flex-wrap: nowrap; /* Empêcher le retour à la ligne */
-    gap: 0.6rem; /* Même espacement uniforme pour tous les éléments */
-    padding: 0 0.3rem; /* Padding réduit pour plus d'espace interne */
-  }
-
-  .nav-links {
-    gap: 0.6rem; /* Même espacement que le groupe principal */
-    flex-wrap: nowrap; /* Empêcher le retour à la ligne des liens */
-    justify-content: flex-start; /* Aligner les liens à gauche */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    flex: none; /* Ne pas étendre, laisser le gap naturel faire son travail */
-    overflow: visible; /* Permettre l'affichage complet du texte */
-    min-width: 0; /* Permettre la réduction si nécessaire */
-  }
-
-  .switch {
-    margin-left: 0; /* Supprimer la marge spéciale */
-    margin-right: 0; /* Supprimer la marge spéciale */
-    flex-shrink: 0; /* Empêcher la réduction du switch */
-    transform: scale(0.8); /* Réduire légèrement la taille du switch */
-  }
-
-  .nav-links li a {
-    font-size: 0.75rem; /* Légèrement augmenté pour plus de lisibilité */
-    white-space: nowrap; /* Empêcher le retour à la ligne du texte */
-    overflow: visible; /* Permettre l'affichage complet */
-    text-overflow: clip; /* Pas de points de suspension */
+    scroll-padding-top: 0; /* Supprime le scroll-padding car pas de navbar */
   }
 
   /* Container principal - layout centré */
@@ -1137,10 +1095,10 @@ input:checked + .slider:before {
   .texte-titre {
     position: relative;
     text-align: center;
-    margin: 4rem 0 5rem 0; /* Augmenté de 2rem à 4rem pour descendre encore plus */
+    margin: 12rem 0 7rem 0; /* Descendu encore plus de 10rem à 12rem */
     z-index: 10;
     width: 100%;
-    padding-top: 1rem; /* Augmenté de 0.5rem à 1rem */
+    padding-top: 5rem; /* Augmenté de 4rem à 5rem pour descendre encore plus */
   }
 
   .bonjour {
@@ -1167,7 +1125,7 @@ input:checked + .slider:before {
     position: relative;
     top: auto;
     left: auto; /* Centré */
-    margin: -8rem auto 1rem auto; /* Redescendu de -12rem à -8rem */
+    margin: -6rem auto 1rem auto; /* Remonté de -2rem à -6rem pour remonter */
     text-align: center; /* Centré sur mobile */
     z-index: 10;
     display: flex;
@@ -1211,9 +1169,9 @@ input:checked + .slider:before {
 
   /* Section À propos - alignement parfait */
   .ellipse-container {
-    margin-top: -2rem; /* Remonté encore de 2rem à -2rem */
+    margin-top: 6rem; /* Uniformisé à 6rem */
     min-height: auto;
-    padding: 3rem 1rem; /* Réduits de 6rem à 3rem */
+    padding: 3rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1228,25 +1186,26 @@ input:checked + .slider:before {
 
   .titre-apropos {
     font-size: 2.2rem;
-    margin: -10rem 0 3rem 0; /* Remonté encore plus de -6rem à -10rem */
+    margin: -4rem 0 1rem 0; /* Remonté de -2rem à -4rem */
     text-align: center;
+    order: -2; /* Mettre le titre en premier */
   }
 
   .apropos-content {
     flex-direction: column;
-    gap: 0rem; /* Réduits encore de 1rem à 0rem pour coller le texte au titre */
+    gap: 0rem;
     align-items: center;
     padding: 0;
     width: 100%;
-    justify-content: center; /* Centrage vertical */
-    margin-top: -22rem; /* Remontée maximale de -16rem à -22rem */
+    justify-content: center;
+    margin-top: 0; /* Supprimé la marge négative */
   }
 
   .image-droite {
     width: 100%;
     text-align: center;
     transform: none !important;
-    order: -1; /* Mettre la photo en premier */
+    order: -1; /* Mettre la photo en deuxième, après le titre */
     display: flex;
     justify-content: center; /* Centrage horizontal parfait */
     align-items: center; /* Centrage vertical */
@@ -1254,16 +1213,16 @@ input:checked + .slider:before {
   }
 
   .image-droite img {
-    width: 450px; /* Encore plus imposante - agrandie de 400px à 450px */
-    height: 450px; /* Encore plus imposante - agrandie de 400px à 450px */
+    width: 450px; /* Augmenté de 350px à 450px */
+    height: 450px; /* Augmenté de 350px à 450px */
     border-radius: 50%;
-    object-fit: cover; /* Pour garder les proportions */
-    margin: 16rem auto 0rem auto; /* Descendue encore plus de 12rem à 16rem */
-    display: block; /* S'assurer que l'image est un bloc */
-    position: relative; /* Positionnement relatif pour un meilleur contrôle */
-    left: 50%; /* Centrage horizontal forcé */
-    transform: translateX(-50%); /* Centrage parfait avec transform */
-    z-index: 2; /* S'assurer que l'image reste au-dessus des ellipses */
+    object-fit: cover;
+    margin: -5rem auto 0rem auto; /* Remonté encore plus de -3rem à -5rem */
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
   }
 
   .texte-gauche {
@@ -1271,20 +1230,26 @@ input:checked + .slider:before {
     text-align: center;
     padding: 0;
     transform: none !important;
-    margin: 0;
+    margin: -6rem 0 0 0; /* Remonté encore plus de -4rem à -6rem */
+    order: 0; /* Mettre le texte en troisième, après le titre et la photo */
+    display: flex;
+    flex-direction: column;
   }
 
   .citation {
     font-size: 1.4rem; /* Augmenté de 1.1rem à 1.4rem */
     margin-bottom: 1.5rem;
+    margin-top: 2rem; /* Ajout d'espace au-dessus de la citation */
     font-style: italic;
+    order: 2; /* Place la citation après le paragraphe sur mobile */
   }
 
   .texte-gauche p {
     font-size: 1.2rem; /* Augmenté de 0.95rem à 1.2rem */
     line-height: 1.6;
     max-width: 450px;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem auto; /* Ajout d'espace en bas du paragraphe */
+    order: 1; /* Place le paragraphe avant la citation sur mobile */
   }
 
   /* Ellipses dans à propos - repositionnement */
@@ -1294,25 +1259,25 @@ input:checked + .slider:before {
   }
 
   .ellipse-container .blue {
-    width: 150px !important; /* Diminué de 170px à 150px */
-    height: 110px !important; /* Diminué de 130px à 110px */
+    width: 180px !important; /* Mise à la même taille que l'ellipse rouge */
+    height: 140px !important; /* Mise à la même taille que l'ellipse rouge */
     top: 70%; /* Remonté de 75% à 70% */
-    right: -5%; /* Décalé encore plus vers la droite, sortant légèrement du cadre */
+    right: -15%; /* Décalé encore plus vers la droite de -5% à -15% */
   }
 
   .ellipse-container .red {
-    width: 220px !important;
-    height: 160px !important;
+    width: 180px !important; /* Même taille que l'ellipse bleue */
+    height: 140px !important; /* Même taille que l'ellipse bleue */
     top: 60%;
-    left: 5%;
+    left: 15%; /* Décalé vers la droite de 5% à 15% */
   }
 
   /* Sections compétences - alignement centré */
   .frontend-section,
   .backend-section,
   .outils-section {
-    margin-top: 4rem; /* Remonté encore plus de 8rem à 4rem pour frontend */
-    padding: 6rem 1rem; /* Augmenté de 4rem à 6rem */
+    margin-top: 6rem; /* Uniformisé à 6rem */
+    padding: 3rem 1rem; /* Uniformisé à 3rem */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -1323,14 +1288,14 @@ input:checked + .slider:before {
   .titre-backend,
   .titre-outils {
     font-size: 2.2rem;
-    margin-bottom: 6rem; /* Augmenté de 4rem à 6rem */
-    margin-top: 0.5rem; /* Remonté de 3rem à 0.5rem */
+    margin-bottom: 3rem; /* Uniformisé à 3rem */
+    margin-top: 0rem; /* Uniformisé à 0rem */
     text-align: center;
   }
 
   /* Frontend section spécifiquement remontée encore plus sur mobile */
   .frontend-section {
-    margin-top: -8rem !important; /* Encore plus remonté de -6rem à -8rem */
+    margin-top: 6rem !important; /* Uniformisé avec les autres sections */
   }
 
   /* Grilles de compétences - tous les logos 3 par 3 */
@@ -1370,9 +1335,9 @@ input:checked + .slider:before {
   }
 
   .frame img {
-    width: 95px; /* Augmenté de 80px à 95px pour plus de visibilité */
-    height: 95px; /* Augmenté de 80px à 95px pour plus de visibilité */
-    margin-bottom: 0.4rem; /* Augmenté de 0.3rem à 0.4rem */
+    width: 80px; /* Réduit de 95px à 80px */
+    height: 80px; /* Réduit de 95px à 80px */
+    margin-bottom: 0.3rem; /* Réduit de 0.4rem à 0.3rem */
   }
 
   .frame-label {
@@ -1385,15 +1350,15 @@ input:checked + .slider:before {
     display: flex !important;
     flex-direction: column !important;
     align-items: center;
-    gap: 2.8rem; /* Augmenté de 2.5rem à 2.8rem */
-    max-width: 420px; /* Agrandi de 380px à 420px pour accommoder 3 colonnes et logos plus grands */
+    gap: 2rem; /* Réduit de 2.8rem à 2rem */
+    max-width: 380px; /* Réduit de 420px à 380px */
     margin: 0 auto;
   }
 
   .ligne-haut {
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr !important; /* 3 colonnes au lieu de 2 */
-    gap: 1.8rem 0.8rem; /* gap vertical augmenté à 1.8rem, horizontal à 0.8rem */
+    gap: 1.5rem 0.6rem; /* Réduit gap de 1.8rem 0.8rem à 1.5rem 0.6rem */
     justify-items: center;
     align-items: start;
     width: 100%;
@@ -1402,7 +1367,7 @@ input:checked + .slider:before {
   .ligne-bas {
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr !important; /* 3 colonnes au lieu de 2 */
-    gap: 1.8rem 0.8rem; /* gap vertical augmenté à 1.8rem, horizontal à 0.8rem */
+    gap: 1.5rem 0.6rem; /* Réduit gap de 1.8rem 0.8rem à 1.5rem 0.6rem */
     justify-items: center;
     align-items: start;
     width: 100%;
@@ -1412,10 +1377,10 @@ input:checked + .slider:before {
   .cards-grid {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 6rem; /* Augmenté de 4rem à 6rem */
-    padding: 6rem 1rem; /* Augmenté de 4rem à 6rem */
-    max-width: 350px;
-    margin: 12rem auto; /* Augmenté de 8rem à 12rem */
+    gap: 2rem; /* Réduit de 3rem à 2rem */
+    padding: 2rem 1rem; /* Réduit de 3rem à 2rem */
+    max-width: 320px; /* Réduit de 350px à 320px */
+    margin: 2rem auto 4rem auto; /* Réduit de 4rem à 2rem pour remonter un peu les cartes */
     justify-items: center;
     align-items: start;
   }
@@ -1526,26 +1491,6 @@ input:checked + .slider:before {
 
 /* Media queries pour très petits écrans (max-width: 480px) */
 @media (max-width: 480px) {
-  /* Navbar ultra-compacte */
-  .navbar {
-    width: 99%; /* Maximiser l'espace */
-    padding: 0.3rem 0.5rem; /* Padding minimal */
-  }
-
-  .nav-links {
-    gap: 0.6rem; /* Espace plus rapproché entre les liens */
-  }
-
-  .nav-links li a {
-    font-size: 0.7rem; /* Taille légèrement plus grande */
-    overflow: visible; /* Permettre l'affichage complet */
-  }
-
-  .switch {
-    margin-left: 0; /* Pas de marge sur très petits écrans */
-    transform: scale(0.7); /* Réduire encore plus le switch */
-  }
-
   .celia {
     font-size: 2.4rem; /* Augmenté de 1.9rem à 2.4rem */
   }
@@ -1624,7 +1569,8 @@ input:checked + .slider:before {
   }
 
   .cards-grid {
-    margin-top: -6rem !important; /* Réduit la marge négative de la grille */
+    margin-top: 2rem !important; /* Réduit de 6rem à 2rem pour remonter encore plus les cartes sur mobile */
+    padding: 2rem 1rem !important; /* Réduit le padding pour moins d'espace */
   }
 
   .project-media {
@@ -1660,7 +1606,7 @@ input:checked + .slider:before {
 /* Remonter la section Backend/BDD sur mobile */
 @media (max-width: 480px) {
   .backend-section {
-    margin-top: -8rem; /* Remonte encore plus la section pour les écrans mobiles */
+    margin-top: 6rem; /* Uniformisé avec les autres sections */
   }
 
   .backend-grid {
@@ -1672,7 +1618,7 @@ input:checked + .slider:before {
   }
 
   .outils-section {
-    margin-top: -4rem; /* Remonte la section pour les écrans mobiles */
+    margin-top: 6rem; /* Uniformisé avec les autres sections */
   }
 }
 
@@ -1703,7 +1649,7 @@ input:checked + .slider:before {
 
 @media (max-width: 480px) {
   .aura-outils {
-    top: 300% !important; /* Descend un petit peu plus l'ellipse noire */
+    top: 350% !important; /* Descend l'ellipse noire vers la section outils */
     transform: translate(-50%, -50%) scale(0.8);
   }
 }

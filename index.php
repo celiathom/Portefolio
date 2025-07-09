@@ -50,7 +50,7 @@
   <div class="ellipse red"></div>
 
   <div class="apropos-wrapper">
-    <h2 class="titre-apropos" id="apropos">À propos</h2>
+    <h2 class="titre-apropos">À propos</h2>
 
     <div class="apropos-content">
       <div class="texte-gauche">
@@ -65,7 +65,7 @@
       </div>
 
       <div class="image-droite">
-        <img src="assets/photo.png" alt="Célia Thomias">
+        <img src="assets/photo.png" alt="Célia Thomias"id="apropos">
       </div>
     </div>
   </div>
