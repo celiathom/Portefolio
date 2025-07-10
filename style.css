@@ -66,7 +66,14 @@ body {
 .nav-group {
   display: flex;
   align-items: center;
-  gap: 5em; /* espace entre les liens et le switch */
+  gap: 3em; /* Réduit de 5em à 3em pour rapprocher le switch des liens */
+  position: relative; /* Ajout de position relative pour permettre un ajustement plus précis */
+}
+
+/* Nouvelle règle pour ajuster uniquement le bouton switch */
+.switch {
+  position: relative;
+  right: -15px; /* Décale le bouton vers la droite */
 }
 
 .navbar.hide {
@@ -128,8 +135,9 @@ body {
   display: inline-block;
   width: 3.5em;
   height: 2em;
-  margin-left: 3rem; /* Augmenté de 2rem à 3rem pour décaler davantage vers la droite */
+  margin-left: 1.5rem; /* Garde la marge gauche */
   vertical-align: middle;
+  right: -30px; /* Augmenté de -15px à -30px pour décaler davantage vers la droite */
 }
 
 .switch input {
