@@ -128,7 +128,7 @@ body {
   display: inline-block;
   width: 3.5em;
   height: 2em;
-  margin-left: 1rem;
+  margin-left: 3rem; /* Augmenté de 2rem à 3rem pour décaler davantage vers la droite */
   vertical-align: middle;
 }
 
