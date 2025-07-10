@@ -1169,7 +1169,7 @@ input:checked + .slider:before {
 
   /* Section À propos - alignement parfait */
   .ellipse-container {
-    margin-top: 6rem; /* Uniformisé à 6rem */
+    margin-top: 10rem; /* Augmenté de 8rem à 10rem pour descendre encore plus la section */
     min-height: auto;
     padding: 3rem 1rem;
     display: flex;
@@ -1186,7 +1186,7 @@ input:checked + .slider:before {
 
   .titre-apropos {
     font-size: 2.2rem;
-    margin: -4rem 0 1rem 0; /* Remonté de -2rem à -4rem */
+    margin: 3rem 0 1rem 0; /* Descendu de 0rem à 3rem pour baisser encore plus le titre */
     text-align: center;
     order: -2; /* Mettre le titre en premier */
   }
@@ -1217,7 +1217,7 @@ input:checked + .slider:before {
     height: 450px; /* Augmenté de 350px à 450px */
     border-radius: 50%;
     object-fit: cover;
-    margin: -5rem auto 0rem auto; /* Remonté encore plus de -3rem à -5rem */
+    margin: 1rem auto 0rem auto; /* Descendu de -2rem à 1rem pour baisser encore la photo */
     display: block;
     position: relative;
     left: 50%;
@@ -1230,7 +1230,7 @@ input:checked + .slider:before {
     text-align: center;
     padding: 0;
     transform: none !important;
-    margin: -6rem 0 0 0; /* Remonté encore plus de -4rem à -6rem */
+    margin: 0rem 0 0 0; /* Descendu de -3rem à 0rem pour baisser encore le texte */
     order: 0; /* Mettre le texte en troisième, après le titre et la photo */
     display: flex;
     flex-direction: column;
@@ -1308,7 +1308,7 @@ input:checked + .slider:before {
     margin: 0 auto;
     justify-items: center;
     align-items: start;
-    margin-top: -2rem; /* Remonté de 2rem à -2rem pour remonter les logos */
+    margin-top: 2rem; /* Descendu de -2rem à 2rem pour baisser les logos */
   }
 
   .backend-grid {
@@ -1320,6 +1320,7 @@ input:checked + .slider:before {
     margin: 0 auto;
     justify-items: center;
     align-items: start;
+    margin-top: 2rem; /* Ajout de marge pour descendre les logos backend */
   }
 
   .frame {
@@ -1352,7 +1353,7 @@ input:checked + .slider:before {
     align-items: center;
     gap: 2rem; /* Réduit de 2.8rem à 2rem */
     max-width: 380px; /* Réduit de 420px à 380px */
-    margin: 0 auto;
+    margin: 2rem auto 0 auto; /* Ajout de marge supérieure pour descendre les logos outils */
   }
 
   .ligne-haut {
@@ -1509,7 +1510,7 @@ input:checked + .slider:before {
     margin: 0 auto;
     justify-items: center;
     align-items: start;
-    margin-top: -2rem; /* Remonté de 2rem à -2rem pour remonter les logos */
+    margin-top: 2rem; /* Descendu de -2rem à 2rem pour baisser les logos */
   }
 
   /* Le 3ème élément (JS) prend toute la largeur en dessous - SUPPRIMÉ */
@@ -1523,6 +1524,7 @@ input:checked + .slider:before {
     margin: 0 auto;
     justify-items: center;
     align-items: start;
+    margin-top: 2rem; /* Ajout de marge pour descendre les logos backend */
   }
 
   .frame {
@@ -1553,7 +1555,7 @@ input:checked + .slider:before {
 
   .outils-container {
     max-width: 350px; /* même largeur que les autres sections */
-    margin: 0 auto;
+    margin: 2rem auto 0 auto; /* Ajout de marge supérieure pour descendre les logos outils */
   }
 
   /* Cards projets encore plus compactes et parfaitement alignées */
@@ -1611,7 +1613,10 @@ input:checked + .slider:before {
 
   .backend-grid {
     display: grid !important; /* Force l'utilisation de la grille */
-    grid-template-columns: repeat(2, 1fr) !important; /* Affiche les logos deux par deux */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ) !important; /* Affiche les logos deux par deux */
     gap: 2rem !important; /* Ajuste l'espacement entre les éléments */
     justify-content: center !important; /* Centre les éléments */
     align-items: center !important; /* Aligne les éléments verticalement */
@@ -1632,7 +1637,7 @@ input:checked + .slider:before {
     justify-content: center;
     gap: 1rem; /* Réduit l'espacement vertical entre les lignes */
   }
-  
+
   .ligne-haut,
   .ligne-bas {
     width: 100%;
@@ -1648,18 +1653,20 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 480px) {
-  .aura-outils {
-    top: 350% !important; /* Descend l'ellipse noire vers la section outils */
-    transform: translate(-50%, -50%) scale(0.8);
-  }
-}
-
-@media (max-width: 480px) {
   .aura-backend {
     width: 150px; /* Réduit encore plus la largeur */
     height: 150px; /* Réduit encore plus la hauteur */
     filter: blur(25px); /* Réduit le flou */
     transform: translate(-50%, -50%) scale(0.9); /* Réduit légèrement la taille */
+  }
+}
+
+@media (max-width: 480px) {
+  .aura-outils {
+    width: 400px !important; /* Augmenté de 380px à 400px */
+    height: 400px !important; /* Augmenté de 380px à 400px */
+    filter: blur(45px) !important; /* Augmenté de 40px à 45px */
+    opacity: 0.95 !important; /* Augmenté de 0.9 à 0.95 */
   }
 }
 
