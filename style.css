@@ -1889,3 +1889,9 @@ input:checked + .slider:before {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   font-weight: 500;
 }
+
+@media (min-width: 769px) {
+  .switch {
+    margin-left: 54px; /* Décalé de 4px supplémentaires vers la droite */
+  }
+}
