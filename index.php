@@ -11,11 +11,6 @@
 </head>
 <body id="body" class="light-mode">
 
-<!-- Bouton mode nuit/jour pour mobile -->
-<div class="mobile-theme-toggle" id="mobile-theme-toggle">
-  <span class="slider"></span>
-</div>
-
 <?php afficherNavbar(); ?>
 
 <div class="container">
@@ -78,6 +73,7 @@
 
 <section class="frontend-section">
   <h2 class="titre-frontend" id="competences">Frontend</h2>
+  <p class="tip-mobile">Touchez une icône pour voir le nom du langage</p>
   <div class="frames-grid">
     <div class="frame"><img src="assets/html.png" alt="HTML"><span class="frame-label">HTML</span></div>
     <div class="frame"><img src="assets/css.png" alt="CSS"><span class="frame-label">CSS</span></div>
@@ -94,6 +90,7 @@
 
 <section class="backend-section">
   <h2 class="titre-backend">Backend / BDD</h2>
+  <p class="tip-mobile">Touchez une icône pour voir le nom du langage</p>
   <div class="frames-grid backend-grid">
     <div class="frame">
       <img src="assets/php.png" alt="PHP">
@@ -117,6 +114,7 @@
 
 <section class="outils-section">
   <h2 class="titre-outils">Boîte à outils</h2>
+  <p class="tip-mobile">Touchez une icône pour voir le nom de l'outil</p>
 
   <div class="outils-container">
     <div class="ligne-haut">
@@ -239,6 +237,13 @@ Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaq
     </div>
   </div>
 </section>
+<!-- Switch jour/nuit version mobile -->
+<div class="mobile-switch">
+  <label class="switch">
+    <input type="checkbox" id="mobile-darkmode-toggle" />
+    <span class="slider"></span>
+  </label>
+</div>
 <script>
   let lastScrollTop = 0;
   const navbar = document.querySelector('.navbar');
