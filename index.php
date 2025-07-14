@@ -11,6 +11,11 @@
 </head>
 <body id="body" class="light-mode">
 
+<!-- Bouton mode nuit/jour pour mobile -->
+<div class="mobile-theme-toggle" id="mobile-theme-toggle">
+  <span class="slider"></span>
+</div>
+
 <?php afficherNavbar(); ?>
 
 <div class="container">

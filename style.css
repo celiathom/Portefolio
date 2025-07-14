@@ -1027,6 +1027,30 @@ input:checked + .slider:before {
   .navbar {
     display: none !important;
   }
+  
+  /* Bouton mode nuit/jour pour mobile */
+  .mobile-theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    z-index: 1000;
+    display: none; /* Caché par défaut */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+  
+  /* Afficher le bouton uniquement sur mobile */
+  @media (max-width: 768px) {
+    .mobile-theme-toggle {
+      display: flex; /* Afficher sur mobile */
+    }
+  }
 
   /* Body et conteneur principal */
   body {
@@ -1344,9 +1368,9 @@ input:checked + .slider:before {
   }
 
   .frame img {
-    width: 80px; /* Réduit de 95px à 80px */
-    height: 80px; /* Réduit de 95px à 80px */
-    margin-bottom: 0.3rem; /* Réduit de 0.4rem à 0.3rem */
+    width: 80px; /* Réduits de 95px à 80px */
+    height: 80px; /* Réduits de 95px à 80px */
+    margin-bottom: 0.3rem; /* Réduits de 0.4rem à 0.3rem */
   }
 
   .frame-label {
@@ -1367,7 +1391,7 @@ input:checked + .slider:before {
   .ligne-haut {
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr !important; /* 3 colonnes au lieu de 2 */
-    gap: 1.5rem 0.6rem; /* Réduit gap de 1.8rem 0.8rem à 1.5rem 0.6rem */
+    gap: 1.5rem 0.6rem; /* Réduits de 1.8rem 0.8rem à 1.5rem 0.6rem */
     justify-items: center;
     align-items: start;
     width: 100%;
@@ -1376,7 +1400,7 @@ input:checked + .slider:before {
   .ligne-bas {
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr !important; /* 3 colonnes au lieu de 2 */
-    gap: 1.5rem 0.6rem; /* Réduit gap de 1.8rem 0.8rem à 1.5rem 0.6rem */
+    gap: 1.5rem 0.6rem; /* Réduits de 1.8rem 0.8rem à 1.5rem 0.6rem */
     justify-items: center;
     align-items: start;
     width: 100%;
@@ -1388,7 +1412,7 @@ input:checked + .slider:before {
     grid-template-columns: 1fr !important;
     gap: 2rem; /* Réduit de 3rem à 2rem */
     padding: 2rem 1rem; /* Réduit de 3rem à 2rem */
-    max-width: 320px; /* Réduit de 350px à 320px */
+    max-width: 320px; /* Réduits de 350px à 320px */
     margin: 2rem auto 4rem auto; /* Réduit de 4rem à 2rem pour remonter un peu les cartes */
     justify-items: center;
     align-items: start;
@@ -1832,3 +1856,24 @@ input:checked + .slider:before {
     top: 70% !important;
   }
 }
+
+/* Amélioration de la transition entre les icônes du bouton mobile et correction pour afficher correctement l'icône en fonction du mode actif */
+.mobile-theme-toggle .slider:before {
+    content: "🟡";
+    position: absolute;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s, opacity 0.3s;
+  }
+  
+  .dark-mode .mobile-theme-toggle .slider:before {
+    content: "🟡";
+  }
+  
+  .light-mode .mobile-theme-toggle .slider:before {
+    content: "🌑";
+  }
