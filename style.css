@@ -1854,7 +1854,7 @@ input:checked + .slider:before {
   .mobile-switch {
     display: block;
     position: absolute; /* Le bouton défile avec le contenu */
-    top: 40px; /* Descendu de 20px à 40px */
+    top: 20px;
     right: 50px; /* Déplacé de 35px à 50px */
     z-index: 1000;
     padding: 5px;
@@ -1892,6 +1892,6 @@ input:checked + .slider:before {
 
 @media (min-width: 769px) {
   .switch {
-    margin-left: 54px; /* Décalé de 4px supplémentaires vers la droite */
+    margin-left: 20px; /* Décalé vers la droite */
   }
 }
