@@ -153,7 +153,7 @@
     <div class="project-card neon-red">
       <div class="project-media" style="position:relative;">
         <img src="assets/puissance4.png" alt="Puissance 4" style="width:100%;height:100%;object-fit:cover;border-radius:18px;display:block;">
-        <a href="https://celiathom.github.io/puissance4/" target="_blank" class="media-overlay">Voir mon projet</a>
+        <a href="https://celiathom.github.io/Puissance4/" target="_blank" class="media-overlay">Voir mon projet</a>
       </div>
       <div class="project-info">
         <h3 class="project-title" style="margin-top:0.1em;font-size:1.5rem;">PUISSANCE 4</h3>
