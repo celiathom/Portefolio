@@ -1,23 +1,22 @@
-💼 Portfolio - Célia Thomias
+Portfolio - Célia Thomias
 
 Bienvenue sur mon portfolio de développeuse web & designer graphique.  
 Ce projet a pour but de présenter mes compétences, mes projets, et les technologies que j’utilise au quotidien.
 
 
 
-🌐 Technologies utilisées
+Technologies utilisées
 
-- **Frontend :** HTML, CSS, JavaScript, React, Tailwind
+- **Frontend :** HTML, CSS, JavaScript
 - **Backend :** PHP, AJAX
 - **Design / Outils :** Figma, Illustrator, Photoshop, VS Code, GitHub
 
 
-🖥️ Fonctionnalités
 
-- Mode clair / sombre avec switch animé 🌙☀️  
-- Ellipses colorées animées en arrière-plan 🎨  
+Fonctionnalités
+
+- Mode clair / sombre avec switch animé 
+- Ellipses colorées animées en arrière-plan 
 - Présentation interactive des compétences via des frames flottantes  
 - Sections claires : Accueil, À propos, Compétences, Outils, Projets  
 - Responsive design (s’adapte à tous les écrans)
-
-nom de dommaine: http://www.porfoliocelia2025.great-site.net/
