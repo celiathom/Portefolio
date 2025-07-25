@@ -741,8 +741,13 @@ input:checked + .slider:before {
   box-shadow: 0 0 40px rgba(255, 140, 0, 0.8);
 }
 
+
 .project-card.neon-green:hover {
   box-shadow: 0 0 40px 0 #347204, 0 0 16px 0 #347204;
+}
+
+.project-card.neon-violet:hover {
+  box-shadow: 0 0 40px 0 #7c3aed, 0 0 16px 0 #7c3aed;
 }
 
 .neon-red {
@@ -759,6 +764,14 @@ input:checked + .slider:before {
 
 .neon-orange {
   background: linear-gradient(to bottom, #181717, #4b2e10);
+}
+
+.neon-green {
+  background: linear-gradient(to bottom, #181717, #204b2c);
+}
+
+.neon-violet {
+  background: linear-gradient(to bottom, #181717, #7c3aed);
 }
 
 .project-media {

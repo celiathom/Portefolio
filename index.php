@@ -225,13 +225,28 @@ Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaq
     <div class="project-card neon-green">
       <div class="project-media" style="position:relative;">
         <img src="assets/Capture d’écran du 2025-06-23 10-30-23.png" alt="Capture d’écran projet" style="width:100%;height:100%;object-fit:cover;border-radius:20px;display:block;">
-        <a href="assets/Copie de CELIA THOMIAS MONOGRAMME.pdf" class="media-overlay" id="voir-plus-monogramme" target="_blank">Voir mon projet</a>
+        <a href="assets/IMG_6820-1.pdf" class="media-overlay" id="voir-plus-monogramme" target="_blank">Voir le PDF</a>
       </div>
       <div class="project-info">
         <h3 style="font-size:1.5rem;">MONOGRAMME</h3>
         <p style="margin-top:-0.5rem;">Ce logo représente mes initiales. Mes couleurs favorites, pour refléter ma personnalité. La typographie du T évoque la forme d’un parapluie, tandis que celle du C rappelle une goutte d’eau, créant ainsi un lien visuel poétique entre les deux éléments.</p>
         <div class="tech-buttons">
           <span class="btn html">Illustrator</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Correction : card violet bien présente et structure HTML valide -->
+    <div class="project-card neon-violet">
+      <div class="project-media" style="position:relative; background: linear-gradient(135deg, #7c3aed 60%, #a78bfa 100%); border-radius: 22px; width: 260px; height: 254px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <img src="assets/Image.jpeg" alt="Maquette projet" style="width:100%;height:100%;object-fit:cover;border-radius:20px;display:block;">
+        <a href="assets/IMG_6820-1.pdf" class="media-overlay" target="_blank">Voir mes maquettes</a>
+      </div>
+      <div class="project-info">
+        <h3 style="color:#fff; font-size:1.5rem; margin-top:0.1em;">MAQUETTES</h3>
+        <p style="color:#fff; margin-top:0.1em;">Exemples de maquettes graphiques réalisées pour des projets web et mobiles. Design, ergonomie et créativité au service de l'expérience utilisateur.</p>
+        <div class="tech-buttons">
+          <span class="btn html" style="background:#4B267A;color:#fff;box-shadow:none;">Figma</span>
         </div>
       </div>
     </div>
@@ -309,6 +324,15 @@ Utilisation de la caméra ou de la galerie, avec durée personnalisée pour chaq
 }
 .project-media:hover .media-overlay {
   opacity: 1;
+}
+/* Correction : retire le contour rouge des boutons violet */
+.project-card.neon-violet .tech-buttons .btn {
+  background: #4B267A !important;
+  color: #fff !important;
+  border: 2px solid #4B267A !important;
+}
+.project-card.neon-violet .tech-buttons .btn.html {
+  box-shadow: 0 0 32px 12px #4B267ACC !important;
 }
 </style>
 <script>
